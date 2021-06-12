@@ -1,0 +1,25 @@
+@import "../../common/variable.scss";
+
+.search {
+  position: relative;
+  max-width: 200px;
+  min-width: 200px;
+  input {
+    width: 196px;
+    height: 28px;
+    background: rgba(2, 146, 68, 0.1);
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    transform: rotate(-0.16deg);
+    padding: 1rem;
+  }
+  ::-webkit-input-placeholder {
+    color: $mainGreen;
+  }
+  &-icon {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+  }
+}
