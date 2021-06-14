@@ -25,8 +25,8 @@ function Sidebar({ showIcon }) {
         <div className="d-flex sidebar-menu-name px-3 my-4 justify-content-between align-items-center">
           {!showIcon && "Super Admin"}
           <div className="d-flex  align-items-center">
-            <Link to="/app/admins"><img src={Icons.AddUsers} alt="plus" className="btn" /></Link>
-            <Link to="/app/add-users"><img src={Icons.PlusGreen} alt="plus" className="btn" /></Link>
+            <Link to="/app/admins"><img src={Icons.AddUsers} alt="plus" className="btn p-0 mr-1" /></Link>
+            <Link to="/app/add-users"><img src={Icons.PlusGreen} alt="plus" className="btn p-0" /></Link>
           </div>
         </div>
         <ul>
@@ -47,7 +47,7 @@ function Sidebar({ showIcon }) {
                 <img src={Icons.Business} alt="admoni logo" />
               </div>
               {!showIcon && <div className="sidebar-menu-link-title">
-                <span className="mr-5 pr-4">Business</span>
+                <span className="mr-5 pr-3">Business</span>
                 <img src={Icons.CheveronDown} alt="admoni logo" className="ml-auto" />
 
               </div>}
