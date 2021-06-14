@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components"
-import { UpIconCards, DownIconCards } from "./Cards";
-import Bag1 from "../assets/Bag1.svg";
-import Bag2 from "../assets/Bag2.svg";
-import Scan from "../assets/Scan.svg";
-import Wallet from "../assets/Wallet.svg";
+import { UpIconCards, DownIconCards } from "../Cards/Cards";
+import Bag1 from "../../assets/icons/Bag1.svg";
+import Bag2 from "../../assets/icons/Bag2.svg";
+import Scan from "../../assets/icons/Scan.svg";
+import Wallet from "../../assets/icons/Wallet.svg";
 
 
 
