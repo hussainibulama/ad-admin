@@ -8,6 +8,7 @@ import {
 // import './App.css';
 import "./App.scss";
 import Home from "./views/Home/home";
+import Dashboard from "./views/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         <Switch> 
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route  path="/app">
+            <Dashboard/>
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,108 @@
+.sidebar {
+  background: #ffff;
+  &-header {
+    border-bottom: 1px solid #f5f5f5;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #045860;
+  }
+  ul, ol {
+    margin: 0 !important;
+    padding: 0;
+  }
+  &-menu {
+    margin-top: 3em;
+    &-name {
+      color: #045860;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    li {
+      list-style: none;
+      margin-bottom: 1em;
+      .sidebar-menu-link {
+        padding: .8em 0;
+        // height: 60px;
+        // background-color: brown;
+        // height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 1em;
+        color: #023439;
+        &-title {
+          width: 150px;
+        }
+      }
+     
+      .selected,
+      .sidebar-menu-link:hover {
+        background: rgba(0, 168, 90, 0.1);
+        color: #029244;
+        font-weight: bold;
+        height: 100%;
+        width: 100%;
+        padding-left: 1em;
+        text-decoration: none;
+      }
+      .sidebar-menu-link-img {
+        width: 30px;
+        height: 30px;
+        img {
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .sidebar-menu-link-inner{
+      padding: .8em 0;
+      padding-left: 4em;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      color: #023439;
+      &:hover{
+        background: rgba(0, 168, 90, 0.1);
+        color: #029244;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &-title {
+        width: 100px;
+      }
+
+    }
+
+    .selected-inner{
+      
+        background: rgba(0, 168, 90, 0.1);
+        color: #029244;
+        font-weight: bold;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+      
+    }
+    &-logout {
+      height: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 1em;
+      margin-top: 5em;
+      color: #cb000b;
+      background: rgba(203, 0, 11, 0.24);
+      cursor: pointer;
+    }
+  }
+}
