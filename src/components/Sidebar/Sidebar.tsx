@@ -2,9 +2,9 @@ import React, { useLayoutEffect, useState } from "react";
 import NavWrapper from "./Sidebar.styles";
 import "./Sidebar.scss";
 import "../../UtilitiesClass/animations/animate.css";
-import twitter from "../../assets/twitter.svg";
-import facebook from "../../assets/facebook.svg";
-import instagram from "../../assets/instagram.svg";
+// import twitter from "../../assets/twitter.svg";
+// import facebook from "../../assets/facebook.svg";
+// import instagram from "../../assets/instagram.svg";
 import P from "../AtomicComponent/Paragraph";
 
 interface Iprops {
@@ -96,13 +96,13 @@ const Sidebar: React.FC<Iprops> = ({ bgColor, img1, img2 }) => {
                     className=" col-sm-10 offset-md-2 "
                   ></P>
                   <div className="col-sm-2 ringed mx-3 rw1">
-                    <img src={twitter} alt="" />
+                    {/* <img src={twitter} alt="" /> */}
                   </div>
                   <div className="col-sm-2 ringed mx-3 rw1">
-                    <img src={facebook} alt="" />
+                    {/* <img src={facebook} alt="" /> */}
                   </div>
                   <div className="col-sm-2 ringed mx-3 rw1">
-                    <img src={instagram} alt="" />
+                    {/* <img src={instagram} alt="" /> */}
                   </div>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import Table from "../../../../components/Table";
 // import { ReactComponent as Dots } from "../../imgs/dot.svg";
 import "./business-table.scss";
 // import { Popover, PopoverBody } from "reactstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import AppModal from "../../components/Modals/AppModal";
 // import {useModal} from "../../Helpers/useModal";
 import eyeIcon from "../../../../assets/icons/Show.png";
@@ -16,7 +16,7 @@ const BusinessTable = () => {
 
   const [popoverOpen2, setPopoverOpen2] = useState(false);
 
-  const toggle = () => setPopoverOpen2(!popoverOpen2);
+  // const toggle = () => setPopoverOpen2(!popoverOpen2);
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
