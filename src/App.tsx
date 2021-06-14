@@ -10,18 +10,22 @@ import "./App.scss";
 import Home from "./views/Home/home";
 import Dashboard from "./views/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BusinessPage from "./views/SampleTable/page";
 
 function App() {
   return (
     <React.Fragment>
       <Router>
         {/* <Sidebar img={logo} /> */}
-        <Switch> 
+        <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route  path="/app">
             <Dashboard/>
+            </Route>
+          <Route exact path="/test">
+            <BusinessPage />
           </Route>
         </Switch>
       </Router>
