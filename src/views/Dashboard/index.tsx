@@ -4,6 +4,7 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import DashboardLayout from "../../layout/Dashboard";
 import Home from "../Home/home"
 import Footer from "../../components/footer/footer"
+import DiscountPartner from "../Business/DiscountPartners";
 
 function Dashboard(props) {
   const {
@@ -17,6 +18,9 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/dashboard`}>
           <Home />
+        </Route>
+        <Route path={`${path}/discount-partners`}>
+          <DiscountPartner/>
         </Route>
         <Route path={`${path}/footer`}>
           <Footer />

@@ -1,17 +1,16 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
- export interface CardProps {
-    bgColor?: string;
-    textColor?: string;
-    width?: string;
-    icon?: string;
-    height?: String;
-    title?: string;
-    amount?: string | number;
-     borderColor?: string;
-     numberColor?: string;
-
+export interface CardProps {
+  bgColor?: string;
+  textColor?: string;
+  width?: string;
+  icon?: string;
+  height?: String;
+  title?: string;
+  amount?: string | number;
+  borderColor?: string;
+  numberColor?: string;
 }
 
 export const UpIconCards = ({
@@ -25,7 +24,6 @@ export const UpIconCards = ({
   borderColor,
   numberColor,
 }: CardProps) => {
-  
   return (
     <UpIconCardStyle
       bgColor={bgColor}
@@ -71,10 +69,10 @@ export const DownIconCards = ({
     >
       <div>
         <div>
-          <p className="title mt-3">{title}</p>
+          <p className="title ">{title}</p>
         </div>
 
-        <div className="flex-container mt-5">
+        <div className="flex-container ">
           <div className="flex-item-one">
             <p className="amount-txt">{amount}</p>
           </div>
@@ -87,18 +85,23 @@ export const DownIconCards = ({
   );
 };
 
-
 const UpIconCardStyle = styled.div`
   border-radius: 10px;
-  padding: 2rem 1.5rem;
+  padding: 20px 18px;
   background-color: ${(props: CardProps) => props.bgColor};
   border: ${(props: CardProps) => props.borderColor};
-
+  height: 135px;
+  min-width: 200px;
+  margin-bottom: 30px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
   .flex-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     height: 100%;
     align-items: center;
+    padding: 29px 0px;
   }
   .flex-item-one {
     justify-items: left;
@@ -107,17 +110,18 @@ const UpIconCardStyle = styled.div`
     justify-self: right;
   }
   .amount-txt {
-    font-size: 2.8rem;
-    font-weight: 800;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 16px;
     color: ${(props: CardProps) => props.numberColor};
     margin-bottom: 0;
   }
   .title {
     font-weight: 300;
-    font-size: 1.7rem;
+    font-size: 14px;
+    line-height: 16px;
     margin-bottom: 0;
     color: ${(props: CardProps) => props.textColor};
   }
-  
 `;
-
