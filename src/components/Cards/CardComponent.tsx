@@ -56,6 +56,11 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-top: 2rem;
+  /* margin: 3rem 0; */
+  padding: 3rem 1rem;
 
   @media only screen and (min-width: 320px) and (max-width: 767px) {
     display: grid;

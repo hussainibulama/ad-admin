@@ -71,7 +71,7 @@ export const DownIconCards = ({
     >
       <div>
         <div>
-          <p className="title mt-3">{title}</p>
+          <p className="title mt-2">{title}</p>
         </div>
 
         <div className="flex-container mt-5">
@@ -90,13 +90,13 @@ export const DownIconCards = ({
 
 const UpIconCardStyle = styled.div`
   border-radius: 10px;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1rem;
   background-color: ${(props: CardProps) => props.bgColor};
   border: ${(props: CardProps) => props.borderColor};
 
   .flex-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     height: 100%;
     align-items: center;
   }
@@ -107,14 +107,14 @@ const UpIconCardStyle = styled.div`
     justify-self: right;
   }
   .amount-txt {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: ${(props: CardProps) => props.numberColor};
     margin-bottom: 0;
   }
   .title {
-    font-weight: 300;
-    font-size: 1.7rem;
+    font-weight: 400;
+    font-size: 1.1rem;
     margin-bottom: 0;
     color: ${(props: CardProps) => props.textColor};
   }

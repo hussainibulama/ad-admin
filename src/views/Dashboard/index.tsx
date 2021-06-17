@@ -4,11 +4,13 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import DashboardLayout from "../../layout/Dashboard";
 import Home from "../Home/home"
 import Footer from "../../components/footer/footer"
-
+import Business from "../Business/index"
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
+
+  console.log(props.match.path)
   return (
     <DashboardLayout>
       <Switch>
@@ -18,6 +20,13 @@ function Dashboard(props) {
         <Route path={`${path}/dashboard`}>
           <Home />
         </Route>
+
+        {/* / */}
+        <Route path={`${path}/business`}>
+          <Business/>
+        </Route>
+
+        {/*  */}
         <Route path={`${path}/footer`}>
           <Footer />
         </Route>
