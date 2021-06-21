@@ -15,7 +15,7 @@ const BusinessPage = () => {
             <img src={FilterIcon} alt="filter" />
           </div>
           <div className="col-md-4">
-            <SearchInput />
+            <SearchInput placeholder="search"/>
           </div>
         </div>
       </div>

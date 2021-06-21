@@ -69,11 +69,7 @@ export const DownIconCards = ({
     >
       <div>
         <div>
-<<<<<<< ft/businesspage
           <p className="title mt-2">{title}</p>
-=======
-          <p className="title ">{title}</p>
->>>>>>> develop
         </div>
 
         <div className="flex-container ">
@@ -116,27 +112,14 @@ const UpIconCardStyle = styled.div`
     justify-self: right;
   }
   .amount-txt {
-<<<<<<< ft/businesspage
     font-size: 1.5rem;
     font-weight: 800;
-=======
-    font-family: "Montserrat";
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 16px;
->>>>>>> develop
     color: ${(props: CardProps) => props.numberColor};
     margin-bottom: 0;
   }
   .title {
-<<<<<<< ft/businesspage
     font-weight: 400;
     font-size: 1.1rem;
-=======
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
->>>>>>> develop
     margin-bottom: 0;
     color: ${(props: CardProps) => props.textColor};
   }
