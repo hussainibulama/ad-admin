@@ -105,6 +105,7 @@ function Table<TField, TData = TField>({
 
     for (let j = startColumn; j < startColumn + numberOfColumns; j += 1) {
       const field = fields[j];
+      
       rowElements.push(<td key={j}>{builder(field, data, i, j)}</td>);
     }
 

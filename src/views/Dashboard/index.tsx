@@ -4,18 +4,17 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import DashboardLayout from "../../layout/Dashboard";
 import Home from "../Home/home"
 import Footer from "../../components/footer/footer"
-
-import Business from "../Business/index"
-
+import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
+import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
+import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
+import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
+import Business from "../Business/index";
 import DiscountPartner from "../Business/DiscountPartners";
-
 
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
-
-  console.log(props.match.path)
   return (
     <DashboardLayout>
       <Switch>
@@ -25,19 +24,31 @@ function Dashboard(props) {
         <Route path={`${path}/dashboard`}>
           <Home />
         </Route>
-
-
         {/* / */}
         <Route path={`${path}/business`}>
-          <Business/>
+          <Business />
         </Route>
-
         {/*  */}
 
         <Route path={`${path}/discount-partners`}>
-          <DiscountPartner/>
+          <DiscountPartner />
         </Route>
 
+        {/* Admin View */}
+        <Route path={`${path}/admin/list`}>
+          <AllAdmin />
+        </Route>
+        <Route path={`${path}/admin/add`}>
+          <AddAdmin />
+        </Route>
+        <Route path={`${path}/admin/profile`}>
+          <AdminProfile />
+        </Route>
+        <Route path={`${path}/admin/edit`}>
+          <EditAdmin />
+        </Route>
+
+        
         <Route path={`${path}/footer`}>
           <Footer />
         </Route>

@@ -12,14 +12,14 @@
     outline: none;
     border: none;
     transform: rotate(-0.16deg);
-    padding: 1rem;
+    padding: 1rem 1.3rem;
   }
   ::-webkit-input-placeholder {
     color: $mainGreen;
   }
   &-icon {
     position: absolute;
-    right: 5%;
+    right: 8%;
     top: 5%;
   }
 }
