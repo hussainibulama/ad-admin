@@ -10,7 +10,7 @@
 }
 
 table {
-  border-collapse: separate;
+  border-collapse: separate !important;
   border-spacing: 0 15px;
 }
 .tableContainer {
@@ -18,7 +18,6 @@ table {
   margin-top: 1rem;
   border-radius: 5px;
   font-family: "Montserrat";
-  padding: 20px;
 
   .table th,
   .table td {
@@ -45,8 +44,6 @@ table {
   }
 
   thead {
-    background-color: white;
-
     tr {
       color: $darkGreen;
       font-weight: 600;

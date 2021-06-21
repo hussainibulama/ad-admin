@@ -78,7 +78,7 @@ const menusInner = [
     {
         icon: Discount,
         title: "Discount Partners",
-        route: "/app/discount",
+        route: "/app/discount-partners",
     },
     {
         icon: Advertiser,
