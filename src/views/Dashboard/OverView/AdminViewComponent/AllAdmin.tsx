@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import Table from "../Table";
-import eyeIcon from "../../assets/icons/Show.png";
-import delIcon from "../../assets/icons/delete-user.png";
-import caretDown from "../../assets/icons/caret-down.png";
-import SearchInput from '../SearchInput/search-input.';
+import Table from "../../../../components/Table";
+import eyeIcon from "../../../../assets/icons/Show.png";
+import delIcon from "../../../../assets/icons/delete-user.png";
+import caretDown from "../../../../assets/icons/caret-down.png";
+import SearchInput from '../../../../components/SearchInput/search-input.';
 
 const AllAdmin = () => {
   const [popoverOpen2, setPopoverOpen2] = useState(false);

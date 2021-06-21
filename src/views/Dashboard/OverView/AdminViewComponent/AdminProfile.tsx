@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import Lock from "../../assets/icons/Lock.svg";
-import Delete from "../../assets/icons/delete-user.svg";
-import Edit from "../../assets/icons/edit-user.svg";
-import Profile from "../../assets/icons/Profile.svg";
-import Message from "../../assets/icons/Message.svg";
+import Lock from "../../../../assets/icons/Lock.svg";
+import Delete from "../../../../assets/icons/delete-user.svg";
+import Edit from "../../../../assets/icons/edit-user.svg";
+import Profile from "../../../../assets/icons/Profile.svg";
+import Message from "../../../../assets/icons/Message.svg";
 import { Link } from "react-router-dom";
 import PasswordChange from "./PasswordChange"
 

@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import Profile from "../../assets/icons/Profile.svg";
-import Message from "../../assets/icons/Message.svg";
-import Lock from "../../assets/icons/Lock.svg";
-import InfoCircle from "../../assets/icons/Info-circle.svg";
-import passwordshow from "../../assets/icons/passwordshow.svg";
-import ShieldDone from "../../assets/icons/Shield-done.svg";
-import continueArrow from "../../assets/icons/continue-arrow.svg";
+import Profile from "../../../../assets/icons/Profile.svg";
+import Message from "../../../../assets/icons/Message.svg";
+import Lock from "../../../../assets/icons/Lock.svg";
+import InfoCircle from "../../../../assets/icons/Info-circle.svg";
+import passwordshow from "../../../../assets/icons/passwordshow.svg";
+import ShieldDone from "../../../../assets/icons/Shield-done.svg";
+import continueArrow from "../../../../assets/icons/continue-arrow.svg";
 import Select from "react-select";
-import { classNames } from 'classnames';
+
 
 const AddAdmin = () => {
     const options = [
