@@ -90,11 +90,10 @@ const DashboardWrapper = styled.div`
     font-weight: 600;
   }
 
-  @media only screen and (max-width:767px){
-	.box3 {
-		flex-direction: column;
-   
-  } 
+  @media only screen and (max-width: 767px) {
+    .box3 {
+      flex-direction: column;
+    }
   }
 `;
 
