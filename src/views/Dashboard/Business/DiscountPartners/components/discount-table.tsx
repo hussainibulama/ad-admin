@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-import Table from "../../../../components/Table";
-import eyeIcon from "../../../../assets/icons/Show.png";
-import delIcon from "../../../../assets/icons/delete-user.png";
-import caretDown from "../../../../assets/icons/caret-down.png";
+import React, { useState } from 'react';
+import Table from '../../../../../components/Table';
+import eyeIcon from '../../../../../assets/icons/Show.png';
+import delIcon from '../../../../../assets/icons/delete-user.png';
+import caretDown from '../../../../../assets/icons/caret-down.png';
 
 const DiscountPartnersTable = () => {
-  
   const [popoverOpen2, setPopoverOpen2] = useState(false);
 
   // const toggle = () => setPopoverOpen2(!popoverOpen2);
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
-      name: "num",
+      name: 'num',
       displayName: (
         <div className="d-flex align-items-center">
           <span className="mr-1">Discount Partners</span>
@@ -20,10 +19,10 @@ const DiscountPartnersTable = () => {
         </div>
       ),
     },
-    { name: "date", displayName: "Date" },
-    { name: "complainant", displayName: "Complainant" },
-    { name: "reason", displayName: "Reason" },
-    { name: "action", displayName: "ACTION" },
+    { name: 'date', displayName: 'Date' },
+    { name: 'complainant', displayName: 'Complainant' },
+    { name: 'reason', displayName: 'Reason' },
+    { name: 'action', displayName: 'ACTION' },
   ];
 
   type TableData = {
@@ -40,40 +39,40 @@ const DiscountPartnersTable = () => {
 
   const products: TableData[] = [
     {
-      id: "1",
+      id: '1',
       num: <h6>#01</h6>,
 
-      date: "26 Jan 2020",
-      complainant: "Adele Kelechi",
-      reason: "Payment Failure",
+      date: '26 Jan 2020',
+      complainant: 'Adele Kelechi',
+      reason: 'Payment Failure',
     },
     {
-      id: "2",
+      id: '2',
       num: <h6>#01</h6>,
-      date: "26 Jan 2020",
-      complainant: "Adele Kelechi",
-      reason: "Payment Failure",
+      date: '26 Jan 2020',
+      complainant: 'Adele Kelechi',
+      reason: 'Payment Failure',
     },
     {
-      id: "3",
+      id: '3',
       num: <h6>#01</h6>,
-      date: "26 Jan 2020",
-      complainant: "Adele Kelechi",
-      reason: "Payment Failure",
+      date: '26 Jan 2020',
+      complainant: 'Adele Kelechi',
+      reason: 'Payment Failure',
     },
     {
-      id: "4",
+      id: '4',
       num: <h6>#01</h6>,
-      date: "26 Jan 2020",
-      complainant: "Adele Kelechi",
-      reason: "Payment Failure",
+      date: '26 Jan 2020',
+      complainant: 'Adele Kelechi',
+      reason: 'Payment Failure',
     },
     {
-      id: "5",
+      id: '5',
       num: <h6>#01</h6>,
-      date: "26 Jan 2020",
-      complainant: "Adele Kelechi",
-      reason: "Payment Failure",
+      date: '26 Jan 2020',
+      complainant: 'Adele Kelechi',
+      reason: 'Payment Failure',
     },
   ];
   return (
@@ -93,7 +92,7 @@ const DiscountPartnersTable = () => {
           checked={true}
           builder={(field, data) => {
             switch (field.name) {
-              case "action":
+              case 'action':
                 return (
                   <div className="cursor-pointer d-flex ">
                     {/* <div id="DisputePopover">...</div> */}
