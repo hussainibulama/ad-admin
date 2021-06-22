@@ -55,12 +55,19 @@ export const DownIconCards = ({
 	borderColor,
 	numberColor,
 }: CardProps) => {
-	return (
-		<UpIconCardStyle bgColor={bgColor} borderColor={borderColor} textColor={textColor} numberColor={numberColor}>
-			<div>
-				<div>
-					<p className="title mt-2">{title}</p>
-				</div>
+
+  return (
+    <UpIconCardStyle
+      bgColor={bgColor}
+      borderColor={borderColor}
+      textColor={textColor}
+      numberColor={numberColor}
+    >
+      <div>
+        <div>
+          <p className="title mt-2">{title}</p>
+        </div>
+
 
 				<div className="flex-container num-icon">
 					<div className="flex-item-one">
@@ -113,8 +120,8 @@ const UpIconCardStyle = styled.div`
 		margin-bottom: 0;
 		color: ${(props: CardProps) => props.textColor};
 	}
-
   .num-icon{
     margin-top:2rem;
+
   }
 `;

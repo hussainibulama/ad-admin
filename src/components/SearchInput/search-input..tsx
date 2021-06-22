@@ -1,10 +1,13 @@
 import React from "react";
 import "./search-input.scss";
 import searchIcon from "../../assets/icons/search.png";
-const SearchInput = () => {
+interface Search {
+  placeholder?: string;
+}
+const SearchInput = ({placeholder}:Search) => {
   return (
     <div className="search">
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder={placeholder} />
       <img className="search-icon" src={searchIcon} alt="search" />
     </div>
   );

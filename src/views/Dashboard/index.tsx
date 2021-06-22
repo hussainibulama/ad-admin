@@ -8,14 +8,17 @@ import Business from "./Business/SubBusiness/index"
 import SingleBusiness from "./Business/SingleBusiness/index"
 import BusinessDashboard from "./Business/DashboardBusiness"
 import DiscountPartner from "./Business/DiscountPartners";
+import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
+import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
+import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
+import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
+
 
 
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
-
-  console.log(props.match.path)
   return (
     <DashboardLayout>
       <Switch>
@@ -26,20 +29,32 @@ function Dashboard(props) {
           <BusinessDashboard/>
           {/* <Home /> */}
         </Route>
-
-
         {/* / */}
         <Route path={`${path}/business`}>
           <Business/>
           {/* <SingleBusiness/> */}
         </Route>
-
         {/*  */}
 
         <Route path={`${path}/discount-partners`}>
-          <DiscountPartner/>
+          <DiscountPartner />
         </Route>
 
+        {/* Admin View */}
+        <Route path={`${path}/admin/list`}>
+          <AllAdmin />
+        </Route>
+        <Route path={`${path}/admin/add`}>
+          <AddAdmin />
+        </Route>
+        <Route path={`${path}/admin/profile`}>
+          <AdminProfile />
+        </Route>
+        <Route path={`${path}/admin/edit`}>
+          <EditAdmin />
+        </Route>
+
+        
         <Route path={`${path}/footer`}>
           <Footer />
         </Route>
