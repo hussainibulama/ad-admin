@@ -1,12 +1,12 @@
-import React from "react";
-import { DownIconCards } from "../../../components/Cards/Cards";
-import Bag1 from "../../../assets/icons/Bag1.svg";
-import Bag2 from "../../../assets/icons/Bag2.svg";
-import Scan from "../../../assets/icons/Scan.svg";
-import Wallet from "../../../assets/icons/Wallet.svg";
-import DiscountPartnersTable from "./components/discount-table";
-import FilterIcon from "../../../assets/icons/Filter.png";
-import SearchInput from "../../../components/SearchInput/search-input.";
+import React from 'react';
+import { DownIconCards } from '../../../../components/Cards/Cards';
+import Bag1 from '../../../../assets/icons/Bag1.svg';
+import Bag2 from '../../../../assets/icons/Bag2.svg';
+import Scan from '../../../../assets/icons/Scan.svg';
+import Wallet from '../../../../assets/icons/Wallet.svg';
+import DiscountPartnersTable from './components/discount-table';
+import FilterIcon from '../../../../assets/icons/Filter.png';
+import SearchInput from '../../../../components/SearchInput/search-input.';
 
 const DiscountPartner = () => {
   return (

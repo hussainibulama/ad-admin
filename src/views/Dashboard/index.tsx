@@ -4,12 +4,16 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import DashboardLayout from "../../layout/Dashboard";
 import Home from "../Home/home"
 import Footer from "../../components/footer/footer"
+import Business from "./Business/SubBusiness/index"
+import SingleBusiness from "./Business/SingleBusiness/index"
+import BusinessDashboard from "./Business/DashboardBusiness"
+import DiscountPartner from "./Business/DiscountPartners";
 import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
 import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
 import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
 import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
-import Business from "../Business/index";
-import DiscountPartner from "../Business/DiscountPartners";
+
+
 
 function Dashboard(props) {
   const {
@@ -22,11 +26,13 @@ function Dashboard(props) {
           <Redirect to={`${path}/dashboard`} />
         </Route>
         <Route path={`${path}/dashboard`}>
-          <Home />
+          <BusinessDashboard/>
+          {/* <Home /> */}
         </Route>
         {/* / */}
         <Route path={`${path}/business`}>
-          <Business />
+          <Business/>
+          {/* <SingleBusiness/> */}
         </Route>
         {/*  */}
 
