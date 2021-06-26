@@ -12,8 +12,8 @@ import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
 import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
 import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
 import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
-
-
+import AdvertiserList from '../Business/Advertisers/AdvertiserList';
+import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 
 function Dashboard(props) {
   const {
@@ -54,7 +54,11 @@ function Dashboard(props) {
           <EditAdmin />
         </Route>
 
-        
+        <Route path={`${path}/advertisers`}>
+          {/* <AdvertiserList /> */}
+          <AdvertisersView />
+        </Route>
+
         <Route path={`${path}/footer`}>
           <Footer />
         </Route>
