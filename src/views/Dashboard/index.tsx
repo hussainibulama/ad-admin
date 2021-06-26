@@ -55,7 +55,9 @@ function Dashboard(props) {
         </Route>
 
         <Route path={`${path}/advertisers`}>
-          {/* <AdvertiserList /> */}
+          <AdvertiserList />
+        </Route>
+        <Route path={`${path}/advertisers-view`}>
           <AdvertisersView />
         </Route>
 

@@ -4,10 +4,16 @@ import AdvertisersTable from './AdvertisersTable';
 import TransactionTable from './TransactionTable';
 import AdvertCard from "./AdvertCard";
 import DisplayDetails from "./DisplayDetails"
+import DeleteUser from "./DeleteUser"
 
 
 const AdvertisersView = () => {
   const [details, setDetails] = useState(false)
+   const [show, setShow] = useState(false);
+
+   const handleShow = () => {
+     setShow(!show);
+   };
 
   const handleChange = () => {
     setDetails(!details);
@@ -21,9 +27,10 @@ const AdvertisersView = () => {
           <div>
             <img className="icon" src="/assets/download.svg" alt="" />
             <img className="icon-two" src="/assets/Edit.svg" alt="" />
-            <img className="icon-three" src="/assets/Delete.svg" alt="" />
+            <img onClick={handleShow} className="icon-three" src="/assets/Delete.svg" alt="" />
           </div>
         </div>
+        <DeleteUser show={show} setShow={setShow} handleShow={handleShow}/>
 
         <div className="wrapper-section">
           <DisplayDetails details={details} handleChange={handleChange} />
