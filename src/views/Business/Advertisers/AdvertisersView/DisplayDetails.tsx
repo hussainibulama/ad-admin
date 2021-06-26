@@ -1,29 +1,28 @@
 import React from "react"
-import styled from "styled-components";
-import circularcaret from "../../../assets/icons/circularcaret.svg"
-import Lock from "../../../assets/icons/Lock.svg";
-import Message from "../../../assets/icons/Message.svg";
-import Phone from "../../../assets/icons/Call.png";
-import ColdStone from "../../../assets/icons/ColdStone.svg";
+import styled from "styled-components"
+import circularcaret from "../../../../assets/icons/circularcaret.svg";
+import Lock from "../../../../assets/icons/Lock.svg";
+import Message from "../../../../assets/icons/Message.svg";
+import Phone from "../../../../assets/icons/Call.png";
+import ColdStone from "../../../../assets/icons/ColdStone.svg";
+import ReversedCircularCaret from "../../../../assets/icons/ReversedCircularCaret.svg";
 
 
-const AdvertisersView = () => {
-    return (
-      <StyledDiv>
-        <div className="grid-cont">
-          <div>
-            <button className="active-btn">Active</button>
-          </div>
-          <div>
-            <img className="icon" src="/assets/download.svg" alt="" />
-            <img className="icon-two" src="/assets/Edit.svg" alt="" />
-            <img className="icon-three" src="/assets/Delete.svg" alt="" />
-          </div>
-        </div>
+
+const DisplayDetails = ({ details, handleChange }) => {
+  return (
+    <StyledDiv>
+      {details === false ? (
         <div className="mt-5 second-section">
           <div>
             <span className="details-heading">Advertisers Account Details</span>
-            <img className="circularIcon" src={circularcaret} alt="caret" />
+            <img
+              onClick={handleChange}
+              className="circularIcon"
+              style={{ cursor: "pointer" }}
+              src={circularcaret}
+              alt="caret"
+            />
           </div>
           <div className="detail-div mt-5">
             <div>
@@ -51,7 +50,9 @@ const AdvertisersView = () => {
               <div>
                 <img src={ColdStone} alt="" />
                 <h5 className="mb-0 coldstone-txt">Coldstone Creamery</h5>
-                <p className="mb-0 addr">23, Jack Benson Avenue, <br/> Lekki, Lagos</p>
+                <p className="mb-0 addr">
+                  23, Jack Benson Avenue, <br /> Lekki, Lagos
+                </p>
               </div>
               <div className="mt-4">
                 <span className="addr">Ads ID</span>
@@ -60,37 +61,37 @@ const AdvertisersView = () => {
             </div>
           </div>
         </div>
-      </StyledDiv>
-    );
-}
+      ) : (
+        <div className="adv-off mt-5">
+          <div>
+            <h5 className="details-heading">Advertisers Account Details</h5>
+          </div>
+          <div className="adv-off-flex">
+            <div className="cold-stone">
+              <img src={ColdStone} alt="" />
+            </div>
+            <div>
+              <h5 className="first-coldstone-txt">Coldstone Creamery</h5>
+              <p className="first-addr">
+                23, Jack Benson Avenue, <br></br>Lekki, Lagos
+              </p>
+            </div>
+            <div>
+              <img
+                style={{ cursor: "pointer" }}
+                onClick={handleChange}
+                src={ReversedCircularCaret}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </StyledDiv>
+  );
+};
 
 const StyledDiv = styled.div`
-  background: #fff;
-  padding: 2rem;
-  .grid-cont {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-  }
-  .grid-cont > div:nth-child(2) {
-    justify-self: left;
-  }
-  .icon-two,
-  .icon-three {
-    margin-left: 3rem;
-  }
-  .active-btn {
-    background: rgba(0, 168, 90, 0.1);
-    border-radius: 10px;
-    padding: 0.4rem 1.7rem;
-    border: none;
-    outline: none;
-    color: #029244;
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  .second-section {
-    padding: 0 3rem;
-  }
   .details-heading {
     color: #045860;
     font-weight: 600;
@@ -146,12 +147,38 @@ const StyledDiv = styled.div`
   }
   .coldstone-txt {
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .addr {
     font-size: 1.2rem;
     font-weight: 300;
   }
+
+  /* adv off */
+  .adv-off {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+  }
+  .adv-off-flex {
+    display: flex;
+    gap: 3rem;
+  }
+  .cold-stone {
+    width: 5rem;
+    height: 5rem;
+  }
+  .cold-stone > img {
+    height: 100%;
+  }
+  .first-coldstone-txt {
+    color: #045860;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .first-addr {
+    color: #045860;
+  }
 `;
 
-export default AdvertisersView;
+export default DisplayDetails
