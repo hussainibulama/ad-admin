@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components"
-import { UpIconCards, DownIconCards } from "./Cards";
-import Bag1 from "../assets/Bag1.svg";
-import Bag2 from "../assets/Bag2.svg";
-import Scan from "../assets/Scan.svg";
-import Wallet from "../assets/Wallet.svg";
-
+import { UpIconCards, DownIconCards } from "../Cards/Cards";
+import Bag1 from "../../assets/icons/Bag1.svg";
+import Bag2 from "../../assets/icons/Bag2.svg";
+import Scan from "../../assets/icons/Scan.svg";
+import Wallet from "../../assets/icons/Wallet.svg";
+import Users from "../../assets/icons/addUsers.svg"
 
 
 
@@ -33,8 +33,8 @@ const CardComponent = () => {
         <DownIconCards
           bgColor="#fff"
           textColor="rgba(4, 88, 96, 1)"
-          icon={Scan}
-          title="QR Codes"
+          icon={Users}
+          title="Sales Rep"
           amount={5}
           borderColor="1px solid #C4C4C4"
           numberColor="rgba(4, 88, 96, 1)"
@@ -56,6 +56,11 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-top: 2rem;
+  /* margin: 3rem 0; */
+  padding: 1.5rem 1rem 0 1rem;
 
   @media only screen and (min-width: 320px) and (max-width: 767px) {
     display: grid;
