@@ -1,21 +1,27 @@
-import React from 'react';
-import './index.scss';
-import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
-import DashboardLayout from '../../layout/Dashboard';
-import Home from '../Home/home';
-import Footer from '../../components/footer/footer';
-import Business from './Business/SubBusiness/index';
-import SingleBusiness from './Business/SingleBusiness/index';
-import BusinessDashboard from './Business/DashboardBusiness';
-import DiscountPartner from './Business/DiscountPartners';
+
+import React from "react";
+import "./index.scss";
+import { withRouter, Route, Switch, Redirect } from "react-router-dom";
+import DashboardLayout from "../../layout/Dashboard";
+import Home from "../Home/home"
+import Footer from "../../components/footer/footer"
+import Business from "./Business/SubBusiness/index"
+import SingleBusiness from "./Business/SingleBusiness/index"
+import BusinessDashboard from "./Business/DashboardBusiness"
+import DiscountPartner from "./Business/DiscountPartners";
+import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
+import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
+import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
+import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
 import Overview from './Overview';
+
 
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
 
-  console.log(props.match.path);
+
   return (
     <DashboardLayout>
       <Switch>
@@ -35,13 +41,29 @@ function Dashboard(props) {
           <Business />
           {/* <SingleBusiness/> */}
         </Route>
-
         {/*  */}
 
         <Route path={`${path}/discount-partners`}>
           <DiscountPartner />
+
         </Route>
 
+        {/* Admin View */}
+        <Route path={`${path}/admin/list`}>
+          <AllAdmin />
+        </Route>
+        <Route path={`${path}/admin/add`}>
+          <AddAdmin />
+        </Route>
+        <Route path={`${path}/admin/profile`}>
+          <AdminProfile />
+        </Route>
+        <Route path={`${path}/admin/edit`}>
+          <EditAdmin />
+
+        </Route>
+
+        
         <Route path={`${path}/footer`}>
           <Footer />
         </Route>

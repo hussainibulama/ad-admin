@@ -21,9 +21,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route  path="/app">
-            <Dashboard/>
-            </Route>
+          <Route path="/app">
+            <Dashboard />
+          </Route>
           <Route exact path="/test">
             <BusinessPage />
           </Route>
