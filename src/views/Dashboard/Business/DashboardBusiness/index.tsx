@@ -78,14 +78,14 @@ const DashboardWrapper = styled.div`
     display: inline-block;
     float: right;
     text-align: right;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border: 2px solid #045860;
     border-radius: 15px;
   }
   .graph-sale {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top:1px solid #C4C4C4;
+    border-top: 1px solid #c4c4c4;
     align-items: center;
   }
 
