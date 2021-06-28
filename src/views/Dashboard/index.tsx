@@ -20,6 +20,7 @@ import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
 import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
+import DashboardOverview from './OverView';
 
 function Dashboard() {
   let { path } = useRouteMatch();
@@ -27,8 +28,9 @@ function Dashboard() {
     <DashboardLayout>
       <Switch>
         <Route exact path="/app">
-          {<Redirect to="/app/admin" />}
+          {<Redirect to="/app/dashboard" />}
         </Route>
+        <Route exact path="/app/dashboard" component={DashboardOverview} />
 
         <Route
           exact
