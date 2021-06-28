@@ -36,7 +36,7 @@ const DashboardOverview = () => {
             </div>
             <div className="graph">
               <LineCharts />
-              <div className="section1 dot-group">
+              <div className="dot-group">
                 <Dots legendName={'User'} legendColor={'#FF7F00'} />
                 <Dots legendName={'Advertiser'} legendColor={'#1F78B4'} />
                 <Dots legendName={'Active Ads'} legendColor={'#318348'} />
@@ -199,7 +199,8 @@ const OverviewWrapper = styled.div`
   .details-section,
   .other-details,
   .sub-views,
-  .section3 {
+  .section3,
+  .dot-group {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -270,7 +271,7 @@ const OverviewWrapper = styled.div`
   }
   .dot-group {
     width: 100%;
-    margin-top: -1rem;
+    margin-top: -0.5rem;
   }
 
   .dot-group p {
@@ -377,6 +378,22 @@ const OverviewWrapper = styled.div`
   .section3 {
     margin-top: 1rem;
     justify-content: space-between;
+  }
+
+  @media screen and (max-width: 767px) {
+    .section1 {
+      flex-direction: column;
+    }
+    .first-card {
+      flex-basis: 100%;
+      margin: 1rem 0;
+    }
+
+    .section2,
+    .section3 {
+      flex-direction: column;
+      align-items: space-evenly;
+    }
   }
 `;
 

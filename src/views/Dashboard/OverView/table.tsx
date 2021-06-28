@@ -232,4 +232,7 @@ const Table2Wrapper = styled.div`
     color: #029244;
     text-decoration: none;
   }
+  @media screen and (max-width: 767px) {
+    margin: 1rem 0;
+  }
 `;

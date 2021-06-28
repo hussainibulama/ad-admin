@@ -26,7 +26,7 @@ import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 import Profile  from "./Users/Profile"
 import UpdateUser  from "./Users/UpdateUser"
 import AllUsers  from "./Users/AllUsers"
-
+import Transactions from './Transactions';
 
 function Dashboard(props) {
   const {
@@ -98,7 +98,18 @@ function Dashboard(props) {
 
         <Route exact path="/app/business/advert" component={AdvertisersView} />
 
-        <Route exact path={`${path}/footer`}>
+        <Route exact path={`${path}/footer`}/>
+
+        <Route path={`${path}/discount-partners`}>
+          <DiscountPartner />
+        </Route>
+
+        <Route path={`${path}/transactions`}>
+          <Transactions />
+        </Route>
+
+        <Route path={`${path}/footer`}>
+
           <Footer />
         </Route>
       </Switch>

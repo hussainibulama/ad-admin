@@ -58,4 +58,9 @@ const SmallerCards = styled.div`
     margin-top: 2rem;
     width: 90%;
   }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 1rem;
+    margin-left: 0rem;
+  }
 `;

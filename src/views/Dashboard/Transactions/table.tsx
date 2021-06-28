@@ -4,31 +4,32 @@ import eyeIcon from '../../../assets/icons/Show.png';
 import delIcon from '../../../assets/icons/delete-user.png';
 import caretDown from '../../../assets/icons/caret-down.png';
 import styled from 'styled-components';
-const table2 = () => {
+const table = () => {
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
-      name: 'advertiser',
+      name: 'user',
       displayName: (
         <div className="d-flex align-items-center">
-          <span className="mr-1">Advertiser</span>
+          <span className="mr-4">User</span>
           <img src={caretDown} alt={'arrowdown'} />
         </div>
       ),
     },
-    { name: 'adsID', displayName: 'Ads ID' },
+    { name: 'type', displayName: 'Type' },
     {
-      name: 'category',
+      name: 'agentCode',
       displayName: (
         <div className="d-flex align-items-center">
-          <span className="mr-1">Category</span>
+          <span className="mr-1">Agent Code</span>
           <img src={caretDown} alt={'arrowdown'} />
         </div>
       ),
     },
 
     { name: 'date', displayName: 'Date' },
-    { name: 'duration', displayName: 'Duration' },
-    { name: 'cap', displayName: 'Cap' },
+    { name: 'operator', displayName: 'Operator' },
+    { name: 'destination', displayName: 'Destination' },
+    { name: 'time', displayName: 'Time' },
     {
       name: 'status',
       displayName: (
@@ -42,86 +43,94 @@ const table2 = () => {
 
   type TableData = {
     id?: string;
-    advertiser: string;
-    adsID: string;
-    category: string;
-    date: string;
-    duration: string;
-    cap: string;
-    status: string;
+    user?: string;
+    type?: string;
+    agentCode?: string;
+    date?: string;
+    operator?: string;
+    destination: string;
+    time?: string;
+    status?: string;
     action?: React.ReactNode;
   };
 
   const products1: TableData[] = [
     {
       id: '1',
-      advertiser: 'Farm Palace',
-      adsID: '10287367',
-      category: 'On-Call Ads',
-      date: '01/04/2021',
-      duration: '60 Days',
-      cap: 'Lekki',
-      status: 'Active',
+      user: 'jane101',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: 'IKEDC',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Failed',
     },
     {
       id: '2',
-      advertiser: 'Shoprite, Lekki',
-      adsID: '32874894',
-      category: 'In-App Banner',
+      user: 'jake1451',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
       date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      status: 'Inactive',
+      operator: 'IKEDC',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Successful',
     },
     {
       id: '3',
-      advertiser: 'MTN Nigeria',
-      adsID: '102883729',
-      category: 'On-Call Ads',
-      date: '01/04/2021',
-      duration: '60 Days',
-      cap: 'Lekki',
-      status: 'Active',
+      user: 'bridget501',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: '9MOBILE',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Invalid',
     },
     {
       id: '4',
-      advertiser: 'Temi’s Fashion',
-      adsID: '10287367',
-      category: 'On-Call Ads',
-      date: '09/01/2021',
-      duration: '14 Days',
-      cap: 'Lekki',
-      status: 'Inactive',
+      user: 'mike201',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: 'MTN',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Failed',
     },
     {
       id: '5',
-      advertiser: 'Farm Palace',
-      adsID: '10287367',
-      category: 'Video Ads',
-      date: '01/04/2021',
-      duration: '60 Days',
-      cap: 'Lekki',
-      status: 'Active',
+      user: 'drake101',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: 'AIRTEL',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Successful',
     },
     {
       id: '6',
-      advertiser: 'Farm Palace',
-      adsID: '10287367',
-      category: 'In-App Banner',
-      date: '01/04/2021',
-      duration: '60 Days',
-      cap: 'Lekki',
-      status: 'Active',
+      user: 'jane101',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: 'IKEDC',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Failed',
     },
     {
       id: '7',
-      advertiser: 'Farm Palace',
-      adsID: '10287367',
-      category: 'On-Call Ads',
-      date: '01/04/2021',
-      duration: '60 Days',
-      cap: 'Lekki',
-      status: 'Active',
+      user: 'jane101',
+      type: 'ELECTRICITY',
+      agentCode: '23347846839',
+      date: '20/03/2021',
+      operator: 'IKEDC',
+      destination: '0808949874',
+      time: '09:14 AM',
+      status: 'Failed',
     },
   ];
 
@@ -167,4 +176,4 @@ const TableWrapper = styled.div`
   }
 `;
 
-export default table2;
+export default table;
