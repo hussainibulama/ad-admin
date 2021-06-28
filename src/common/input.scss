@@ -1,0 +1,23 @@
+.input-form {
+  height: 50px;
+  background: rgba(0, 168, 90, 0.05) !important;
+  border-radius: 10px;
+  padding: 20px 40px !important;
+  box-sizing: border-box ;
+}
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #aac7b9!important;
+}
+.preppend,
+.append {
+  position: absolute;
+  top: 20%;
+}
+.append {
+  right: 2%;
+  top: 30%;
+}
+.preppend {
+  left: 2%;
+}

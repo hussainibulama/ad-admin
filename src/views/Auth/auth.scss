@@ -1,0 +1,23 @@
+.character {
+  width: 100%;
+  &-img {
+    height: 382.2185974121094px;
+    max-width: 519.53515625px;
+    min-width:  400px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+button {
+  min-width: 185px;
+  height: 58px;
+//   padding: 20px;
+  background: #00a85a;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color:white;
+  text-align: center;   
+}

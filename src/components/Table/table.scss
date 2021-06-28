@@ -1,8 +1,8 @@
 @import "../../common/variable.scss";
 
 .table-responsive {
-  min-height: 600px;
-  overflow-x: clip !important;
+  // min-height: 600px;
+  // overflow-x: auto !important;
 }
 .MuiSvgIcon-root {
   width: 16px !important;
@@ -49,6 +49,7 @@ table {
       font-weight: 600;
       line-height: 16px;
       font-size: 14px;
+
       th {
         input {
           margin-left: 0 !important;
@@ -56,20 +57,20 @@ table {
         }
       }
     }
+    .action{
+        border: 1px solid $mainGreen;
+        box-sizing: border-box;
+        border-radius: 5px;
+        text-align: center;
+        padding: 5px;
+        max-width: 100px;
+        }
   }
 
   tbody {
     background-color: white;
     min-height: 400px;
     width: 100%;
-    // &::before {
-    //   width: 100%;
-    //   content: "-";
-    //   display: block;
-    //   line-height: 0px;
-    //   color: transparent;
-    //   background-color: #fff !important;
-    // }
     tr {
       line-height: 30px;
       height: auto;
@@ -137,6 +138,7 @@ table {
             font-family: "HelveticaRegular";
           }
         }
+        
       }
     }
   }

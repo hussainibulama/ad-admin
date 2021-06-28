@@ -6,12 +6,14 @@ import Bag2 from "../../assets/icons/Bag2.svg";
 import Scan from "../../assets/icons/Scan.svg";
 import Wallet from "../../assets/icons/Wallet.svg";
 import Users from "../../assets/icons/addUsers.svg"
-
+import './cards.scss'
 
 
 const CardComponent = () => {
     return (
-      <StyledDiv>
+      <div className='card-container' >
+        <div className="rows p-3 ">
+          <div className="col">
         <UpIconCards
           bgColor="#fff"
           textColor="rgba(4, 88, 96, 1)"
@@ -20,7 +22,9 @@ const CardComponent = () => {
           amount={10}
           borderColor="1px solid #C4C4C4"
           numberColor="rgba(4, 88, 96, 1)"
-        />
+          />
+          </div>
+          <div className="col">
         <UpIconCards
           bgColor="#fff"
           textColor="rgba(255, 127, 0, 1)"
@@ -29,7 +33,9 @@ const CardComponent = () => {
           amount={20}
           borderColor="1px solid #C4C4C4"
           numberColor="rgba(4, 88, 96, 1)"
-        />
+            />
+          </div>
+           <div className="col"> 
         <DownIconCards
           bgColor="#fff"
           textColor="rgba(4, 88, 96, 1)"
@@ -38,7 +44,9 @@ const CardComponent = () => {
           amount={5}
           borderColor="1px solid #C4C4C4"
           numberColor="rgba(4, 88, 96, 1)"
-        />
+            />
+          </div>
+           <div className="col">
         <UpIconCards
           bgColor="#fff"
           textColor="rgba(4, 88, 96, 1)"
@@ -47,26 +55,13 @@ const CardComponent = () => {
           amount="NGN 34,000,000"
           borderColor="1px solid #C4C4C4"
           numberColor="rgba(4, 88, 96, 1)"
-        />
-      </StyledDiv>
+            />
+            </div>
+           </div>
+      </div >
     );
 }
                 
-const StyledDiv = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  background-color: #fff;
-  border-radius: 20px;
-  margin-top: 2rem;
-  /* margin: 3rem 0; */
-  padding: 1.5rem 1rem 0 1rem;
-
-  @media only screen and (min-width: 320px) and (max-width: 767px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
-  }
-`;
+ 
 
 export default CardComponent;
