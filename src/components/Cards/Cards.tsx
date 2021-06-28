@@ -65,7 +65,7 @@ export const DownIconCards = ({
     >
       <div>
         <div>
-          <p className="title mt-2">{title}</p>
+          <p className="title ">{title}</p>
         </div>
 
 
@@ -123,5 +123,42 @@ const UpIconCardStyle = styled.div`
   .num-icon{
     margin-top:2rem;
 
+  padding: 1rem 1rem;
+
+  background-color: ${(props: CardProps) => props.bgColor};
+  border: ${(props: CardProps) => props.borderColor};
+  height: 135px;
+  min-width: 200px;
+  margin-bottom: 30px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  .flex-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    height: 100%;
+    align-items: center;
+    padding: 29px 0px;
+  }
+  .flex-item-one {
+    justify-items: left;
+  }
+  .flex-item-two {
+    justify-self: right;
+  }
+  .amount-txt {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 16px;
+    color: ${(props: CardProps) => props.numberColor};
+    margin-bottom: 0;
+  }
+  .title {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 0;
+    color: ${(props: CardProps) => props.textColor};
   }
 `;

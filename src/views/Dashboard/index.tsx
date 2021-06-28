@@ -13,6 +13,11 @@ import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
 import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
 import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
 
+// import Business from "../Business/index"
+import Users  from "./Users"
+import AllUsers  from "./Users/AllUsers"
+
+// import DiscountPartner from "../Business/DiscountPartners";
 
 
 function Dashboard(props) {
@@ -29,6 +34,14 @@ function Dashboard(props) {
           <BusinessDashboard/>
           {/* <Home /> */}
         </Route>
+        <Route exact path={`${path}/users`}>
+          <AllUsers/>
+        </Route>
+        <Route path={`${path}/users/:id`}>
+          <Users />
+        </Route>
+
+
         {/* / */}
         <Route path={`${path}/business`}>
           <Business/>
