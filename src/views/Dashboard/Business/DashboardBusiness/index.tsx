@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Charts from './Chart';
 import { CardBox1, CardBox2, CardBox3 } from './Cards';
 import Person from '../../../../assets/icons/person.svg';
+import SmallBag from '../../../../assets/icons/Bag1.svg';
 const index = () => {
   return (
     <DashboardWrapper>
@@ -15,7 +17,14 @@ const index = () => {
       </div>
       <div className="box3">
         <div className="sales">
-          <div></div>
+          <p className="years">Year</p>
+          <Charts />
+          <div className="graph-sale">
+            <p>SALES</p>
+            <p>
+              <img src={SmallBag} alt="bag" />
+            </p>
+          </div>
         </div>
 
         <div className="sales-points">
@@ -47,13 +56,13 @@ const DashboardWrapper = styled.div`
 
   .box3,
   .sales-title,
-  .profile {
+  .profile,
+  .graph-sale {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
   }
-  .box3 {
-  }
+
   .sales,
   .sales-points {
     background-color: #fff;
@@ -62,7 +71,27 @@ const DashboardWrapper = styled.div`
 
   .sales {
     flex-basis: 60%;
+    padding: 2rem;
     margin-right: 0.5rem;
+  }
+  .years {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    border: 2px solid #045860;
+    border-radius: 15px;
+  }
+  .graph-sale {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #c4c4c4;
+    align-items: center;
+  }
+
+  .graph-sale :first-child {
+    color: #045860;
+    font-weight: 600;
   }
 
   .sales-points {

@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./index.scss";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -12,32 +13,39 @@ import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
 import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
 import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
 import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
-
+import Overview from './Overview';
 
 
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
+
+
   return (
     <DashboardLayout>
       <Switch>
         <Route exact path={path}>
           <Redirect to={`${path}/dashboard`} />
         </Route>
+        <Route path={`${path}/overview`}>
+          <Overview />
+        </Route>
         <Route path={`${path}/dashboard`}>
-          <BusinessDashboard/>
+          <BusinessDashboard />
           {/* <Home /> */}
         </Route>
+
         {/* / */}
         <Route path={`${path}/business`}>
-          <Business/>
+          <Business />
           {/* <SingleBusiness/> */}
         </Route>
         {/*  */}
 
         <Route path={`${path}/discount-partners`}>
           <DiscountPartner />
+
         </Route>
 
         {/* Admin View */}
@@ -52,6 +60,7 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/admin/edit`}>
           <EditAdmin />
+
         </Route>
 
         

@@ -55,7 +55,7 @@ const menus1 = [
     {
         icon: Overview,
         title: "Overview",
-        route: "/app/dashboard",
+        route: "/app/overview",
     },
     {
         icon: Users,
