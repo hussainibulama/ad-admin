@@ -16,7 +16,7 @@ import { Table1, Table2 } from './table';
 import { MiniChart1, MiniChart2, MiniChart3, MiniChart4 } from './MiniCharts';
 
 import { Cards } from './Card';
-const index = () => {
+const Dashboard = () => {
   return (
     <OverviewWrapper>
       <div className="section1">
@@ -359,4 +359,4 @@ const OverviewWrapper = styled.div`
   }
 `;
 
-export default index;
+export default Dashboard;
