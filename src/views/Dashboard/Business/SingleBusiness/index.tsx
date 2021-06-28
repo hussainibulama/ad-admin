@@ -1,15 +1,21 @@
 import React from 'react';
 import Business from './components/details';
-import Cards from '../../../../components/Cards/CardComponent';
-import Sample from './components/myTablePage';
-const index = () => {
+import Cards from '../../../../components/Cards/CardComponent'
+import SalesPoint from './components/SalesPoint';
+import BusinessProduct from './components/BusinessProduct';
+import SalesRecord from './components/SalesRecord';
+
+const BusinessDetailsPage = () => {
   return (
     <>
       <Business />
       <Cards />
-      <Sample />
+      <BusinessProduct />
+      <SalesPoint />
+      <SalesRecord/>
+    
     </>
   );
 };
 
-export default index;
+export default BusinessDetailsPage;

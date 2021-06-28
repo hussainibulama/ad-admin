@@ -55,7 +55,7 @@ const menus1 = [
     {
         icon: Overview,
         title: "Overview",
-        route: "/app/dashboard",
+        route: "/app/admin",
     },
     {
         icon: Users,
@@ -68,27 +68,27 @@ const menusInner = [
     {
         icon: Dashboard,
         title: "Dashboard",
-        route: "/app/dashboard",
+        route: "/app/business/dashboard",
     },
     {
         icon: WorkBusiness,
         title: "Business",
-        route: "/app/business",
+        route: "/app/business/business",
     },
     {
         icon: Discount,
         title: "Discount Partners",
-        route: "/app/discount-partners",
+        route: "/app/business/discount-partners",
     },
     {
         icon: Advertiser,
         title: "Advertisers",
-        route: "/app/advertisers",
+        route: "/app/business/advertisers",
     },
     {
         icon: Advertiser,
         title: "Advert",
-        route: "/app/advert",
+        route: "/app/business/advert",
     },
 ]
 

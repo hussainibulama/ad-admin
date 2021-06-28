@@ -1,0 +1,16 @@
+.green {
+  color: $mainGreen;
+}
+.dark-green {
+  color: $darkGreen;
+}
+.p-6 {
+  padding: 5rem 8rem!important;
+  box-sizing: border-box;
+  @media  (max-width:1200px) {
+      padding: 4rem!important;
+  }
+  @media  (max-width:769px) {
+      padding: 2rem!important;
+  }
+}

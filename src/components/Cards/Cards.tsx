@@ -89,6 +89,7 @@ const UpIconCardStyle = styled.div`
 	border: ${(props: CardProps) => props.borderColor};
 	height: 135px;
 	min-width: 250px;
+  width:100%;
 	margin-bottom: 30px;
 	&:not(:last-child) {
 		margin-right: 20px;

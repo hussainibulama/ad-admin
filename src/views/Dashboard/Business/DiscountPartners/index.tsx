@@ -12,8 +12,8 @@ const DiscountPartner = () => {
   return (
     <div>
       <section className="cards-conatiner">
-        <div className="row">
-          <div className="col-lg-3 col-md-4">
+        <div className="rows">
+          <div className="cols">
             <DownIconCards
               bgColor="#fff"
               textColor="rgba(4, 88, 96, 1)"
@@ -24,7 +24,7 @@ const DiscountPartner = () => {
               numberColor="rgba(4, 88, 96, 1)"
             />
           </div>
-          <div className="col-lg-3 col-md-4">
+          <div className="cols">
             <DownIconCards
               bgColor="#fff"
               textColor="rgba(255, 127, 0, 1)"
@@ -35,7 +35,7 @@ const DiscountPartner = () => {
               numberColor="rgba(4, 88, 96, 1)"
             />
           </div>
-          <div className="col-lg-3 col-md-4">
+          <div className="cols">
             <DownIconCards
               bgColor="#fff"
               textColor="rgba(255, 127, 0, 1)"
@@ -46,7 +46,7 @@ const DiscountPartner = () => {
               numberColor="rgba(4, 88, 96, 1)"
             />
           </div>
-          <div className="col-lg-3 col-md-4">
+          <div className="cols">
             <DownIconCards
               bgColor="#fff"
               textColor="rgba(255, 127, 0, 1)"
@@ -57,7 +57,7 @@ const DiscountPartner = () => {
               numberColor="rgba(4, 88, 96, 1)"
             />
           </div>
-          <div className="col-lg-3 col-md-4">
+          <div className="cols">
             <DownIconCards
               bgColor="#fff"
               textColor="rgba(255, 127, 0, 1)"
@@ -71,16 +71,17 @@ const DiscountPartner = () => {
         </div>
       </section>
       <section className="table-section">
-        <div className="top-section w-100 row justify-content-center align-items-center px-3">
-          <div className="col-md-6 top-section-text">
+        <div className="top-section w-100 row justify-content-center align-items-center px-2">
+          <div className="col-5  mr-3 top-section-text">
             <p>Discount Partner</p>
           </div>
-          <div className="row  col-md-6 justify-content-end">
-            <div className=" col-md-3">
+          <div className="col-1"></div>
+          <div className="row  col-6 justify-content-end">
+            <div className="mr-5">
               <span className="green mr-2">Sort</span>
               <img src={FilterIcon} alt="filter" />
             </div>
-            <div className="col-md-4 col-sm-8 ">
+            <div className="">
               <SearchInput />
             </div>
           </div>
