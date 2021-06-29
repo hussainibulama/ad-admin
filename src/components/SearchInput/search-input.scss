@@ -2,8 +2,9 @@
 
 .search {
   position: relative;
-  max-width: 200px;
+  max-width: 300px;
   min-width: 200px;
+  width: 100%;
   input {
     width: 196px;
     height: 28px;
@@ -19,7 +20,7 @@
   }
   &-icon {
     position: absolute;
-    right: 8%;
-    top: 5%;
+    right: 10px;
+    top: 5px;
   }
 }

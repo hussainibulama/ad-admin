@@ -3,9 +3,11 @@ import Table from '../../../../../components/Table';
 import eyeIcon from '../../../../../assets/icons/Show.png';
 import delIcon from '../../../../../assets/icons/delete-user.png';
 import caretDown from '../../../../../assets/icons/caret-down.png';
+import { useHistory } from 'react-router-dom';
 
 const DiscountPartnersTable = () => {
   const [popoverOpen2, setPopoverOpen2] = useState(false);
+  const history = useHistory();
 
   // const toggle = () => setPopoverOpen2(!popoverOpen2);
 
@@ -90,6 +92,7 @@ const DiscountPartnersTable = () => {
           fields={tableHead}
           tableData={products}
           checked={true}
+          onClick={() => history.push('/app/business/discount-details')}
           builder={(field, data) => {
             switch (field.name) {
               case 'action':

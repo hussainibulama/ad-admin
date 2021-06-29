@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components"
-import { Link } from "react-router-dom"
-import Table from "../../../../components/Table";
-import eyeIcon from "../../../../assets/icons/Show.png";
-import delIcon from "../../../../assets/icons/delete-user.png";
-import caretDown from "../../../../assets/icons/caret-down.png";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Table from '../../../../components/Table';
+import eyeIcon from '../../../../assets/icons/Show.png';
+import delIcon from '../../../../assets/icons/delete-user.png';
+import caretDown from '../../../../assets/icons/caret-down.png';
 import SearchInput from '../../../../components/SearchInput/search-input.';
 
 const AllAdmin = () => {
@@ -12,7 +12,7 @@ const AllAdmin = () => {
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
-      name: "adminName",
+      name: 'adminName',
       displayName: (
         <div className="d-flex align-items-center">
           <span className="mr-1">Admin Name</span>
@@ -20,11 +20,11 @@ const AllAdmin = () => {
         </div>
       ),
     },
-    { name: "email", displayName: "Email" },
-    { name: "role", displayName: "Role" },
-    { name: "phone", displayName: "Phone" },
-    { name: "status", displayName: "Status" },
-    { name: "action", displayName: "ACTION" },
+    { name: 'email', displayName: 'Email' },
+    { name: 'role', displayName: 'Role' },
+    { name: 'phone', displayName: 'Phone' },
+    { name: 'status', displayName: 'Status' },
+    { name: 'action', displayName: 'ACTION' },
   ];
 
   type TableData = {
@@ -42,37 +42,37 @@ const AllAdmin = () => {
 
   const names: TableData[] = [
     {
-      id: "1",
-      adminName: "Shola Abe",
-      email: "shola.abe@admoni.ng",
-      role: "Admin",
-      phone: "080446658828",
-      status: "Active",
+      id: '1',
+      adminName: 'Shola Abe',
+      email: 'shola.abe@admoni.ng',
+      role: 'Admin',
+      phone: '080446658828',
+      status: 'Active',
     },
     {
-      id: "2",
-      adminName: "Michael Gaffield",
-      email: "michael@admoni.ng",
-      role: "Marketer",
-      phone: "080234567905",
-      status: "Away",
+      id: '2',
+      adminName: 'Michael Gaffield',
+      email: 'michael@admoni.ng',
+      role: 'Marketer',
+      phone: '080234567905',
+      status: 'Away',
     },
     {
-      id: "3",
-      adminName: "Hammed Scott",
-      email: "Hammed@admoni.ng",
-      role: "Content Review",
-      phone: "080234567435",
-      status: "Active",
+      id: '3',
+      adminName: 'Hammed Scott',
+      email: 'Hammed@admoni.ng',
+      role: 'Content Review',
+      phone: '080234567435',
+      status: 'Active',
     },
     {
-      id: "4",
-      adminName: "E Johnson",
-      email: "johnson@admoni.ng",
-      role: "Data Analysis",
-      phone: "080234567435",
-      status: "Disabled",
-    }
+      id: '4',
+      adminName: 'E Johnson',
+      email: 'johnson@admoni.ng',
+      role: 'Data Analysis',
+      phone: '080234567435',
+      status: 'Disabled',
+    },
   ];
   return (
     <StyledList>
@@ -80,10 +80,12 @@ const AllAdmin = () => {
         <div>
           <h3 className="mb-0 title">All Admin</h3>
         </div>
-         <div className="sub-grid-cont">
-                  <div className="add-btn"><Link to="/app/admin/add">+</Link></div>
+        <div className="sub-grid-cont">
+          <div className="add-btn">
+            <Link to="/app/admin/add">+</Link>
+          </div>
           <div>
-            <SearchInput placeholder="Search User"/>
+            <SearchInput placeholder="Search User" />
           </div>
         </div>
       </div>
@@ -94,7 +96,7 @@ const AllAdmin = () => {
           checked={true}
           builder={(field, data) => {
             switch (field.name) {
-              case "action":
+              case 'action':
                 return (
                   <div className="cursor-pointer d-flex ">
                     <div className="col-1">
@@ -160,7 +162,7 @@ const StyledList = styled.div`
   }
   .disputes {
     h5 {
-      font-family: "HelveticaMedium";
+      font-family: 'HelveticaMedium';
       color: #737a91;
     }
   }

@@ -1,30 +1,33 @@
 import React from 'react';
 import FilterIcon from '../../../../../assets/icons/Filter.png';
 import SearchInput from '../../../../../components/SearchInput/search-input.';
-import BusinessTable from './table';
+import BusinessTable from './ProductTable';
 import styled from 'styled-components';
-const myTablePage = () => {
+import SalesPointTable from './SalesPointTable';
+
+const BusinessProduct = () => {
   return (
-    <BusinnessWrapper className="p-3 mt-4">
-      <div className="top-section">
-        <div className="top-section-text">
-          <p>Products</p>
+    <section className="table-section">
+        <div className="top-section w-100 row justify-content-center align-items-center px-2">
+        <div className="col-4 top-section-text">
+            <p>Sales Points</p>
         </div>
-        <div className="sort-search">
-          <div className="col-lg-2 col-md-3 top-section-sort">
+        <div className="row  col-8 justify-content-end">
+            <div className=" mr-4  ">
             <span className="green mr-2">Sort</span>
             <img src={FilterIcon} alt="filter" />
-          </div>
-          <div className="col-md-4 top-section-search">
+            </div>
+            <div className="  ">
             <SearchInput />
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
 
-      <section>
-        <BusinessTable />
-      </section>
-    </BusinnessWrapper>
+        <section>
+        <SalesPointTable/>
+        </section>
+    </section>
+
   );
 };
 
@@ -50,4 +53,4 @@ const BusinnessWrapper = styled.div`
   }
 `;
 
-export default myTablePage;
+export default BusinessProduct;

@@ -1,10 +1,12 @@
-@import "./common/mixin.scss";
-@import "./common/variable.scss";
-@import "./common//main.scss";
+@import './common/mixin.scss';
+@import './common/variable.scss';
+@import './common//main.scss';
+// @import './common/input.scss';
+@import './common/utilities.scss';
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./Fonts/Montserrat/Montserrat-Regular.ttf") format("opentype");
+  font-family: 'Montserrat';
+  src: url('./Fonts/Montserrat/Montserrat-Regular.ttf') format('opentype');
 }
 :root {
   --mainWhite: #fff;
@@ -63,7 +65,7 @@ body {
 }
 
 @media (max-width: 576px) {
-  [class^="col-"] {
+  [class^='col-'] {
     margin-bottom: 1.5rem;
   }
 }

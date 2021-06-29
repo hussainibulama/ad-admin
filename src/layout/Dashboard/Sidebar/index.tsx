@@ -25,7 +25,7 @@ function Sidebar({ showIcon }) {
         <div className="d-flex sidebar-menu-name px-3 my-4 justify-content-between align-items-center">
           {!showIcon && "Super Admin"}
           <div className="d-flex  align-items-center">
-            <Link to="/app/admins"><img src={Icons.AddUsers} alt="plus" className="btn p-0 mr-1" /></Link>
+            <Link to="/app/admin"><img src={Icons.AddUsers} alt="plus" className="btn p-0 mr-1" /></Link>
             <Link to="/app/add-users"><img src={Icons.PlusGreen} alt="plus" className="btn p-0" /></Link>
           </div>
         </div>

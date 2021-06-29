@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import classNames from "classnames";
-import "./table.scss";
-import { withStyles } from "@material-ui/core/styles";
-import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
-import { FormControlLabel } from "@material-ui/core";
-import { green } from "@material-ui/core/colors";
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import './table.scss';
+import { withStyles } from '@material-ui/core/styles';
+import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
+import { FormControlLabel } from '@material-ui/core';
+import { green } from '@material-ui/core/colors';
 
 export interface TableField<T> {
   name: keyof T;
@@ -19,7 +19,7 @@ export type FieldBuilder<T, D> = (
   field: TableField<T>,
   data: D,
   row: number,
-  column: number
+  column: number,
 ) => React.ReactNode;
 
 export interface TableProps<T, D> {
@@ -37,6 +37,7 @@ export interface TableProps<T, D> {
   rows?: number;
   before?: React.ReactNode;
   after?: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 function Table<TField, TData = TField>({
@@ -48,9 +49,10 @@ function Table<TField, TData = TField>({
   columns,
   rows,
   after,
-  noDataMessage = "No records found to display",
+  noDataMessage = 'No records found to display',
   startColumn = 0,
   startRow = 0,
+  onClick,
 }: TableProps<TField, TData & { id?: string | Number }>) {
   const numberOfColumns = columns || fields.length;
   const numberOfRows = tableData.length > 0 ? rows || tableData.length : 0;
@@ -69,7 +71,7 @@ function Table<TField, TData = TField>({
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    id: string
+    id: string,
   ) => {
     const selectedIndex = selected.indexOf(id);
     let newSelected: string[] = [];
@@ -83,7 +85,7 @@ function Table<TField, TData = TField>({
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
+        selected.slice(selectedIndex + 1),
       );
     }
 
@@ -91,8 +93,8 @@ function Table<TField, TData = TField>({
   };
   const GreenCheckbox = withStyles({
     root: {
-      color: "#029244",
-      "&$checked": {
+      color: '#029244',
+      '&$checked': {
         color: green[600],
       },
     },
@@ -105,14 +107,14 @@ function Table<TField, TData = TField>({
 
     for (let j = startColumn; j < startColumn + numberOfColumns; j += 1) {
       const field = fields[j];
-      
+
       rowElements.push(<td key={j}>{builder(field, data, i, j)}</td>);
     }
 
     const isSelected = selected.indexOf(data.id!) !== -1;
 
     columnElements.push(
-      <tr key={i}>
+      <tr key={i} onClick={onClick}>
         {isChecked && (
           <td>
             {/* <input
@@ -139,7 +141,7 @@ function Table<TField, TData = TField>({
           </td>
         )}
         {rowElements}
-      </tr>
+      </tr>,
     );
   }
 
@@ -179,11 +181,11 @@ function Table<TField, TData = TField>({
       </BackDrop> */}
       <div
         className={classNames(
-          "table-min-height d-flex align-items-center justify-content-center",
-          { "d-none": columnElements?.length > 0 }
+          'table-min-height d-flex align-items-center justify-content-center',
+          { 'd-none': columnElements?.length > 0 },
         )}
       >
-        <div className={classNames({ "d-none": isLoading })}>
+        <div className={classNames({ 'd-none': isLoading })}>
           {noDataMessage}
         </div>
       </div>
