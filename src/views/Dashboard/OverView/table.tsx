@@ -153,6 +153,12 @@ export const Table2 = () => {
 
       <section>
         <BusinessTable />
+        <p className="mt-4 mb-4 float-right">
+          <NavLink to="/" id="view">
+            {' '}
+            View all
+          </NavLink>
+        </p>
       </section>
     </Table2Wrapper>
   );
@@ -215,5 +221,15 @@ const Table2Wrapper = styled.div`
     font-weight: 500;
     font-size: 0.9rem;
     color: #029244;
+  }
+
+  #view {
+    padding: 0.3rem 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid #029244;
+    background: #fff;
+    color: #029244;
+    text-decoration: none;
   }
 `;

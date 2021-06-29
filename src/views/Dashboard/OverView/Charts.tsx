@@ -2,7 +2,7 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
 const state = {
-  labels: ['January', 'February', 'March', 'April', 'May'],
+  labels: ['', '', '', '', ''],
   datasets: [
     {
       label: 'Users',
@@ -88,10 +88,15 @@ const state = {
   ],
 };
 const options: ChartOptions = {
+  // showXAxisLabel:false,
   scales: {
+    //   title:{display: false},
     x: {
+      // showAxisLabel:{},
+      // labels:{},
       //   display: false,
       grid: {
+        //   labels:{},
         drawBorder: true,
         drawOnChartArea: true,
         drawTicks: false,
@@ -108,11 +113,16 @@ const options: ChartOptions = {
   },
 
   responsive: true,
+
   plugins: {
     legend: {
       display: false,
       position: 'bottom',
-      labels: {},
+      labels: {
+        color: '#333',
+      },
+
+      //   borderRadius:2
     },
     title: {
       display: false,
