@@ -15,7 +15,9 @@ import bagOrange from '../../../assets/icons/smallOrange.svg';
 import { Table1, Table2 } from './table';
 import { MiniChart1, MiniChart2, MiniChart3, MiniChart4 } from './MiniCharts';
 import { Cards } from './Card';
-const Dashboard = () => {
+
+
+const DashboardOverview = () => {
   return (
     <OverviewWrapper>
       <div className="section1">
@@ -358,4 +360,4 @@ const OverviewWrapper = styled.div`
   }
 `;
 
-export default Dashboard;
+export default DashboardOverview;
