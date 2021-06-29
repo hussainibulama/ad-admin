@@ -10,7 +10,7 @@ import redStar from '../../../assets/icons/redStar.svg';
 import arrow from '../../../assets/icons/arrowright.svg';
 import styled from 'styled-components';
 
-const index = () => {
+const Transaction = () => {
   return (
     <TransactionWrapper>
       <div className="first-section">
@@ -373,4 +373,4 @@ const TransactionWrapper = styled.div`
   }
 `;
 
-export default index;
+export default Transaction;

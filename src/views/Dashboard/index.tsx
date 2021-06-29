@@ -26,7 +26,7 @@ import Profile  from "./Users/Profile"
 import UpdateUser  from "./Users/UpdateUser"
 import AllUsers  from "./Users/AllUsers"
 
-import Transactions from './Transactions';
+import Transactions from './Transactions/Transaction';
 
 function Dashboard(props) {
   const {
