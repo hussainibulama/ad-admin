@@ -1,6 +1,5 @@
 
 import React from "react";
-import "./index.scss";
 import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import DashboardLayout from "../../layout/Dashboard";
 import Home from "../Home/home"
@@ -13,7 +12,13 @@ import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
 import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
 import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
 import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
-import Overview from './Overview';
+import Overview from './OverView/index';
+
+// import Business from "../Business/index"
+import Profile  from "./Users/Profile"
+import AllUsers  from "./Users/AllUsers"
+
+// import DiscountPartner from "../Business/DiscountPartners";
 
 
 function Dashboard(props) {
@@ -26,7 +31,7 @@ function Dashboard(props) {
     <DashboardLayout>
       <Switch>
         <Route exact path={path}>
-          <Redirect to={`${path}/dashboard`} />
+          <Redirect to={`${path}/overview`} />
         </Route>
         <Route path={`${path}/overview`}>
           <Overview />
@@ -35,6 +40,13 @@ function Dashboard(props) {
           <BusinessDashboard />
           {/* <Home /> */}
         </Route>
+        <Route exact path={`${path}/users`}>
+          <AllUsers/>
+        </Route>
+        <Route path={`${path}/users/:id`}>
+          <Profile />
+        </Route>
+
 
         {/* / */}
         <Route path={`${path}/business`}>
