@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+
 import {
   withRouter,
   Route,
@@ -23,16 +23,39 @@ import BusinessDetailsPage from './Business/SingleBusiness/index';
 import DashboardOverview from './OverView/DashboardOverview';
 import AdvertiserList from '../Business/Advertisers/AdvertiserList';
 import AdvertisersView from '../Business/Advertisers/AdvertisersView';
+import Profile  from "./Users/Profile"
+import UpdateUser  from "./Users/UpdateUser"
+import AllUsers  from "./Users/AllUsers"
 
-function Dashboard() {
-  let { path } = useRouteMatch();
+
+function Dashboard(props) {
+  const {
+    match: { path },
+  } = props;
+
+
   return (
     <DashboardLayout>
       <Switch>
-        <Route exact path="/app">
-          {<Redirect to="/app/dashboard" />}
+        <Route exact path={path}>
+          <Redirect to={`${path}/overview`} />
         </Route>
-        <Route exact path="/app/dashboard" component={DashboardOverview} />
+        <Route path={`${path}/overview`}>
+          <DashboardOverview />
+        </Route>
+        <Route path={`${path}/dashboard`}>
+          <BusinessDashboard />
+          {/* <Home /> */}
+        </Route>
+        <Route exact path={`${path}/users`}>
+          <AllUsers/>
+        </Route>
+        <Route path={`${path}/users/update/:id`}>
+          <UpdateUser />
+        </Route>
+        <Route path={`${path}/users/:id`}>
+          <Profile />
+        </Route>
 
         <Route
           exact
