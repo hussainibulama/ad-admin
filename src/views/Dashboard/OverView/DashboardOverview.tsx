@@ -16,7 +16,6 @@ import { Table1, Table2 } from './table';
 import { MiniChart1, MiniChart2, MiniChart3, MiniChart4 } from './MiniCharts';
 import Dots from './Dots';
 import { Cards } from './Card';
-
 const DashboardOverview = () => {
   return (
     <OverviewWrapper>
@@ -396,5 +395,4 @@ const OverviewWrapper = styled.div`
     }
   }
 `;
-
 export default DashboardOverview;
