@@ -20,7 +20,7 @@ import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
 import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
-import DashboardOverview from './OverView';
+import DashboardOverview from './OverView/DashboardOverview';
 import AdvertiserList from '../Business/Advertisers/AdvertiserList';
 import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 
