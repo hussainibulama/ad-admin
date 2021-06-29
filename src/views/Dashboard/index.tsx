@@ -20,9 +20,9 @@ import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
 import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
-import DashboardOverview from './OverView';
-import Overview from './OverView/index';
-
+import DashboardOverview from './OverView/DashboardOverview';
+import AdvertiserList from '../Business/Advertisers/AdvertiserList';
+import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 import Profile  from "./Users/Profile"
 import UpdateUser  from "./Users/UpdateUser"
 import AllUsers  from "./Users/AllUsers"
@@ -41,7 +41,7 @@ function Dashboard(props) {
           <Redirect to={`${path}/overview`} />
         </Route>
         <Route path={`${path}/overview`}>
-          <Overview />
+          <DashboardOverview />
         </Route>
         <Route path={`${path}/dashboard`}>
           <BusinessDashboard />
@@ -56,9 +56,6 @@ function Dashboard(props) {
         <Route path={`${path}/users/:id`}>
           <Profile />
         </Route>
-
-  
-        <Route exact path="/app/dashboard" component={DashboardOverview} />
 
         <Route
           exact
@@ -92,6 +89,14 @@ function Dashboard(props) {
         <Route exact path="app/admin/profile" component={AdminProfile} />
 
         <Route exact path="/app/admin/edit" component={EditAdmin} />
+
+        <Route
+          exact
+          path="/app/business/advertisers"
+          component={AdvertiserList}
+        />
+
+        <Route exact path="/app/business/advert" component={AdvertisersView} />
 
         <Route exact path={`${path}/footer`}>
           <Footer />
