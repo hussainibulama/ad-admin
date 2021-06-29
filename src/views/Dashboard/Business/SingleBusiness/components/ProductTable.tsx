@@ -5,7 +5,7 @@ import eyeIcon from '../../../../../assets/icons/Show.png';
 import delIcon from '../../../../../assets/icons/delete-user.png';
 import caretDown from '../../../../../assets/icons/caret-down.png';
 import styled from 'styled-components';
-const myTable = () => {
+const ProductTable = () => {
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
       name: 'products',
@@ -148,4 +148,4 @@ const TableWrapper = styled.div`
   }
 `;
 
-export default myTable;
+export default ProductTable;

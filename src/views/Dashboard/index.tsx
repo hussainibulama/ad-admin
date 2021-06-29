@@ -1,24 +1,31 @@
+import React from 'react';
 
-import React from "react";
-import { withRouter, Route, Switch, Redirect } from "react-router-dom";
-import DashboardLayout from "../../layout/Dashboard";
-import Home from "../Home/home"
-import Footer from "../../components/footer/footer"
-import Business from "./Business/SubBusiness/index"
-import SingleBusiness from "./Business/SingleBusiness/index"
-import BusinessDashboard from "./Business/DashboardBusiness"
-import DiscountPartner from "./Business/DiscountPartners";
-import AllAdmin from "./OverView/AdminViewComponent/AllAdmin";
-import AddAdmin from "./OverView/AdminViewComponent/AddAdmin";
-import AdminProfile from "./OverView/AdminViewComponent/AdminProfile";
-import EditAdmin from "./OverView/AdminViewComponent/EditAdmin";
+import {
+  withRouter,
+  Route,
+  Switch,
+  Redirect,
+  useRouteMatch,
+} from 'react-router-dom';
+import DashboardLayout from '../../layout/Dashboard';
+import Home from '../Home/home';
+import Footer from '../../components/footer/footer';
+import Business from './Business/SubBusiness/index';
+import SingleBusiness from './Business/SingleBusiness/index';
+import BusinessDashboard from './Business/DashboardBusiness';
+import DiscountPartner from './Business/DiscountPartners';
+import AllAdmin from './OverView/AdminViewComponent/AllAdmin';
+import AddAdmin from './OverView/AdminViewComponent/AddAdmin';
+import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
+import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
+import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
+import BusinessDetailsPage from './Business/SingleBusiness/index';
+import DashboardOverview from './OverView';
 import Overview from './OverView/index';
 
-// import Business from "../Business/index"
 import Profile  from "./Users/Profile"
+import UpdateUser  from "./Users/UpdateUser"
 import AllUsers  from "./Users/AllUsers"
-
-// import DiscountPartner from "../Business/DiscountPartners";
 
 
 function Dashboard(props) {
@@ -43,40 +50,50 @@ function Dashboard(props) {
         <Route exact path={`${path}/users`}>
           <AllUsers/>
         </Route>
+        <Route path={`${path}/users/update/:id`}>
+          <UpdateUser />
+        </Route>
         <Route path={`${path}/users/:id`}>
           <Profile />
         </Route>
 
+  
+        <Route exact path="/app/dashboard" component={DashboardOverview} />
 
-        {/* / */}
-        <Route path={`${path}/business`}>
-          <Business />
-          {/* <SingleBusiness/> */}
-        </Route>
+        <Route
+          exact
+          path="/app/business/dashboard"
+          component={BusinessDashboard}
+        />
+
+        <Route exact path="/app/business/business" component={Business} />
+
         {/*  */}
+        <Route
+          path="/app/business/business-details"
+          component={BusinessDetailsPage}
+        />
 
-        <Route path={`${path}/discount-partners`}>
-          <DiscountPartner />
+        <Route
+          path="/app/business/discount-partners"
+          component={DiscountPartner}
+        />
 
-        </Route>
+        <Route
+          exact
+          path="/app/business/discount-details"
+          component={DiscountPartnerDetails}
+        />
 
         {/* Admin View */}
-        <Route path={`${path}/admin/list`}>
-          <AllAdmin />
-        </Route>
-        <Route path={`${path}/admin/add`}>
-          <AddAdmin />
-        </Route>
-        <Route path={`${path}/admin/profile`}>
-          <AdminProfile />
-        </Route>
-        <Route path={`${path}/admin/edit`}>
-          <EditAdmin />
+        <Route exact path="/app/admin" component={AllAdmin} />
 
-        </Route>
+        <Route exact path="/app/admin/add" component={AddAdmin} />
+        <Route exact path="app/admin/profile" component={AdminProfile} />
 
-        
-        <Route path={`${path}/footer`}>
+        <Route exact path="/app/admin/edit" component={EditAdmin} />
+
+        <Route exact path={`${path}/footer`}>
           <Footer />
         </Route>
       </Switch>

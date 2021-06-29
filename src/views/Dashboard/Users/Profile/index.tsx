@@ -10,6 +10,7 @@ import ProfilePix from '../../../../assets/images/profile-pix.svg';
 import BaseMap from '../../../../assets/images/basemap.svg';
 import ChartIcon from '../../../../assets/icons/Chart-total.svg';
 import ReferralsIcon from '../../../../assets/icons/referrals.svg';
+
 import SwitchBuuton from '../../../../components/switch';
 import DeleteModal from '../../../../components/DeleteModal/index';
 import Table from './table';
@@ -18,11 +19,11 @@ import { cardData } from '../data';
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-
+const userId = 4
   return (
     <>
       {showModal && <DeleteModal isClose={setShowModal} />}
-      <DetailsWrapper>
+      <ProfileWrapper>
         <div className="head">
           <Link to="/" className="status">
             Active
@@ -32,7 +33,7 @@ const Index = () => {
             <Link to="/">
               <img src="/assets/download.svg" alt="" />
             </Link>
-            <Link to="/">
+            <Link to={`/app/users/update/${userId}`}>
               <img src="/assets/Edit.svg" alt="" />
             </Link>
             <div onClick={() => setShowModal(true)} className="delete-bin">
@@ -195,17 +196,16 @@ const Index = () => {
           </div>
         </div>
         <Table />
-      </DetailsWrapper>
+      </ProfileWrapper>
     </>
   );
 };
 
-const DetailsWrapper = styled.div`
+const ProfileWrapper = styled.div`
 	padding: 1.5rem 4rem;
 	background-color: #fff;
 	border-radius: 20px;
-	/* width: 100%; */
-	/* margin: 0 auto; */
+
 
 	a {
 		text-decoration: none;
@@ -481,15 +481,15 @@ const DetailsWrapper = styled.div`
 }
 .view-all{
 	border: 1px solid #029244;
-box-sizing: border-box;
-border-radius: 15px;
-color: #029244;
-width: 114px;
-height: 26px;
-margin-left:auto;
-text-align:center;
-margin-top:-8em;
-cursor:pointer;
+	box-sizing: border-box;
+	border-radius: 15px;
+	color: #029244;
+	width: 114px;
+	height: 26px;
+	margin-left:auto;
+	text-align:center;
+	// margin-top:-8em;
+	cursor:pointer;
 }
 	@media only screen and (max-width: 769px) {
 		width: 100%;
