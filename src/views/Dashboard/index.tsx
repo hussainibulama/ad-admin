@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss';
+
 import {
   withRouter,
   Route,
@@ -20,17 +20,42 @@ import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
 import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
-import DashboardOverview from './OverView';
+import DashboardOverview from './OverView/DashboardOverview';
+import AdvertiserList from '../Business/Advertisers/AdvertiserList';
+import AdvertisersView from '../Business/Advertisers/AdvertisersView';
+import Profile  from "./Users/Profile"
+import UpdateUser  from "./Users/UpdateUser"
+import AllUsers  from "./Users/AllUsers"
 
-function Dashboard() {
-  let { path } = useRouteMatch();
+
+function Dashboard(props) {
+  const {
+    match: { path },
+  } = props;
+
+
   return (
     <DashboardLayout>
       <Switch>
-        <Route exact path="/app">
-          {<Redirect to="/app/dashboard" />}
+        <Route exact path={path}>
+          <Redirect to={`${path}/overview`} />
         </Route>
-        <Route exact path="/app/dashboard" component={DashboardOverview} />
+        <Route path={`${path}/overview`}>
+          <DashboardOverview />
+        </Route>
+        <Route path={`${path}/dashboard`}>
+          <BusinessDashboard />
+          {/* <Home /> */}
+        </Route>
+        <Route exact path={`${path}/users`}>
+          <AllUsers/>
+        </Route>
+        <Route path={`${path}/users/update/:id`}>
+          <UpdateUser />
+        </Route>
+        <Route path={`${path}/users/:id`}>
+          <Profile />
+        </Route>
 
         <Route
           exact
@@ -64,6 +89,14 @@ function Dashboard() {
         <Route exact path="app/admin/profile" component={AdminProfile} />
 
         <Route exact path="/app/admin/edit" component={EditAdmin} />
+
+        <Route
+          exact
+          path="/app/business/advertisers"
+          component={AdvertiserList}
+        />
+
+        <Route exact path="/app/business/advert" component={AdvertisersView} />
 
         <Route exact path={`${path}/footer`}>
           <Footer />
