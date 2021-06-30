@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   withRouter,
   Route,
@@ -30,6 +29,7 @@ import AdvertList from '../Business/Advert/AdvertList/index';
 import AdsDetails from '../Business/Advert/AdsDetails/index';
 import AdvertView from '../Business/Advert/AdvertView/index';
 
+import Transactions from './Transactions/Transaction';
 
 function Dashboard(props) {
   const {
@@ -103,7 +103,18 @@ function Dashboard(props) {
         <Route exact path="/app/business/advert-list" component={AdvertList} />
         <Route exact path="/app/business/ads-details" component={AdsDetails} />
 
-        <Route exact path={`${path}/footer`}>
+        <Route exact path={`${path}/footer`}/>
+
+        <Route path={`${path}/discount-partners`}>
+          <DiscountPartner />
+        </Route>
+
+        <Route path={`${path}/transactions`}>
+          <Transactions />
+        </Route>
+
+        <Route path={`${path}/footer`}>
+
           <Footer />
         </Route>
       </Switch>

@@ -14,9 +14,8 @@ import discount from '../../../assets/icons/blueDiscount.svg';
 import bagOrange from '../../../assets/icons/smallOrange.svg';
 import { Table1, Table2 } from './table';
 import { MiniChart1, MiniChart2, MiniChart3, MiniChart4 } from './MiniCharts';
+import Dots from './Dots';
 import { Cards } from './Card';
-
-
 const DashboardOverview = () => {
   return (
     <OverviewWrapper>
@@ -36,6 +35,16 @@ const DashboardOverview = () => {
             </div>
             <div className="graph">
               <LineCharts />
+              <div className="dot-group">
+                <Dots legendName={'User'} legendColor={'#FF7F00'} />
+                <Dots legendName={'Advertiser'} legendColor={'#1F78B4'} />
+                <Dots legendName={'Active Ads'} legendColor={'#318348'} />
+                <Dots legendName={'Inactive Ads'} legendColor={'#FD242B'} />
+                <Dots legendName={'Downloads'} legendColor={'#00A85A'} />
+                <Dots legendName={'Token'} legendColor={'#E1B000'} />
+                <Dots legendName={'Referrals'} legendColor={'#33A02C'} />
+                <Dots legendName={'Reviews'} legendColor={'#FDBF6F'} />
+              </div>
             </div>
           </div>
           <div className="other-details">
@@ -127,7 +136,7 @@ const DashboardOverview = () => {
             <p className="card-title number mt-2">40587</p>
             <p className="downloads fades">Total Advertisers onboard</p>
             <p className="mt-4">
-              <NavLink to="/" className="view ">
+              <NavLink to="/" className="view font-weight-bold">
                 {' '}
                 View
               </NavLink>
@@ -189,7 +198,8 @@ const OverviewWrapper = styled.div`
   .details-section,
   .other-details,
   .sub-views,
-  .section3 {
+  .section3,
+  .dot-group {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -254,10 +264,20 @@ const OverviewWrapper = styled.div`
     justify-content: space-between;
     margin: 0.5rem 0;
   }
-
+  //Large graph
   .graph {
-    width: 70%;
+    width: 78%;
   }
+  .dot-group {
+    width: 100%;
+    margin-top: -0.5rem;
+  }
+
+  .dot-group p {
+    font-size: 0.65rem;
+  }
+  //end of Large graph
+
   .sub-views {
     align-items: center;
   }
@@ -358,6 +378,21 @@ const OverviewWrapper = styled.div`
     margin-top: 1rem;
     justify-content: space-between;
   }
-`;
 
+  @media screen and (max-width: 767px) {
+    .section1 {
+      flex-direction: column;
+    }
+    .first-card {
+      flex-basis: 100%;
+      margin: 1rem 0;
+    }
+
+    .section2,
+    .section3 {
+      flex-direction: column;
+      align-items: space-evenly;
+    }
+  }
+`;
 export default DashboardOverview;
