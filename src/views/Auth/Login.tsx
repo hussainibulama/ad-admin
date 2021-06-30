@@ -43,14 +43,17 @@ const Login = () => {
               <img className="preppend" src={lock} alt="" />
               <img className="append" src={show} alt="" />
             </div>
-            <button type="submit" className="mt-5 mb-4">
+            <button type="submit" className="mt-5 mb-4 auth-button">
               Login{' '}
               <span className="ml-3">
                 <img src={caretRight} alt="login" />
               </span>
             </button>
             <p>
-              cant't login? <span className='green font-weight-bold'>Reset your password</span>
+              cant't login?{' '}
+              <span className="green font-weight-bold">
+                Reset your password
+              </span>
             </p>
           </form>
         </div>

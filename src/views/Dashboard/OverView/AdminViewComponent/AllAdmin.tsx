@@ -6,8 +6,10 @@ import eyeIcon from '../../../../assets/icons/Show.png';
 import delIcon from '../../../../assets/icons/delete-user.png';
 import caretDown from '../../../../assets/icons/caret-down.png';
 import SearchInput from '../../../../components/SearchInput/search-input.';
+import { useHistory } from 'react-router-dom';
 
 const AllAdmin = () => {
+  const history = useHistory();
   const [popoverOpen2, setPopoverOpen2] = useState(false);
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
@@ -94,6 +96,7 @@ const AllAdmin = () => {
           fields={tableHead}
           tableData={names}
           checked={true}
+          onClick={() => history.push('admin/profile')}
           builder={(field, data) => {
             switch (field.name) {
               case 'action':

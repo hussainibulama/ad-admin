@@ -32,7 +32,7 @@ const ResetPassword = () => {
               <img className="preppend" src={profile} alt="" />
               <img className="append" src="" alt="" />
             </div>
-            <button type="submit" className="mt-5 mb-4">
+            <button type="submit" className="mt-5 mb-4 auth-button">
               Continue{' '}
               <span className="ml-3">
                 <img src={caretRight} alt="login" />

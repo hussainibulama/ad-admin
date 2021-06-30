@@ -31,7 +31,7 @@ const LockScreen = () => {
               <img className="preppend" src={lock} alt="" />
               <img className="append" src={show} alt="" />
             </div>
-            <button type="submit" className="mt-5 mb-4">
+            <button type="submit" className="mt-5 mb-4 auth-button">
               Continue{' '}
               <span className="ml-3">
                 <img src={caretRight} alt="login" />
