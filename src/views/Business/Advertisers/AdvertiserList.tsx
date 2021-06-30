@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
 import Table from "../../../components/Table";
 import eyeIcon from "../../../assets/icons/Show.png";
 import delIcon from "../../../assets/icons/delete-user.png";
@@ -12,6 +12,7 @@ import pageleft from "../../../assets/icons/pageleft.svg";
 import pageright from "../../../assets/icons/page-right.svg";
 
 const AdvertiserList = () => {
+  const history = useHistory();
   const [popoverOpen2, setPopoverOpen2] = useState(false);
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
@@ -155,9 +156,10 @@ const AdvertiserList = () => {
           fields={tableHead}
           tableData={names}
           checked={true}
+          onClick={() => history.push('/app/business/advertisers-view')}
           builder={(field, data) => {
             switch (field.name) {
-              case "action":
+              case 'action':
                 return (
                   <div className="cursor-pointer d-flex ">
                     <div className="col-1">
