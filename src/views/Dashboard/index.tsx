@@ -22,20 +22,21 @@ import BusinessDetailsPage from './Business/SingleBusiness/index';
 import DashboardOverview from './OverView/DashboardOverview';
 import AdvertiserList from '../Business/Advertisers/AdvertiserList';
 import AdvertisersView from '../Business/Advertisers/AdvertisersView';
-import Profile  from "./Users/Profile"
-import UpdateUser  from "./Users/UpdateUser"
-import AllUsers  from "./Users/AllUsers"
+import Profile from './Users/Profile';
+import UpdateUser from './Users/UpdateUser';
+import AllUsers from './Users/AllUsers';
 import AdvertList from '../Business/Advert/AdvertList/index';
 import AdsDetails from '../Business/Advert/AdsDetails/index';
 import AdvertView from '../Business/Advert/AdvertView/index';
-
 import Transactions from './Transactions/Transaction';
-
+import Referrals from './Referrals/Referrals';
+import App from './App./App';
+import AppBuild from './AppBuild/AppBuild';
+import BuildDetails from './AppBuild/BuildDetails';
 function Dashboard(props) {
   const {
     match: { path },
   } = props;
-
 
   return (
     <DashboardLayout>
@@ -51,7 +52,7 @@ function Dashboard(props) {
           {/* <Home /> */}
         </Route>
         <Route exact path={`${path}/users`}>
-          <AllUsers/>
+          <AllUsers />
         </Route>
         <Route path={`${path}/users/update/:id`}>
           <UpdateUser />
@@ -103,7 +104,7 @@ function Dashboard(props) {
         <Route exact path="/app/business/advert-list" component={AdvertList} />
         <Route exact path="/app/business/ads-details" component={AdsDetails} />
 
-        <Route exact path={`${path}/footer`}/>
+        <Route exact path={`${path}/footer`} />
 
         <Route path={`${path}/discount-partners`}>
           <DiscountPartner />
@@ -112,9 +113,21 @@ function Dashboard(props) {
         <Route path={`${path}/transactions`}>
           <Transactions />
         </Route>
+        <Route path={`${path}/referrals`}>
+          <Referrals />
+        </Route>
+        <Route path={`${path}/build_app`}>
+          <AppBuild />
+        </Route>
+        <Route path={`${path}/errors`}>
+          <BuildDetails />
+        </Route>
+
+        <Route path={`${path}/app`}>
+          <App />
+        </Route>
 
         <Route path={`${path}/footer`}>
-
           <Footer />
         </Route>
       </Switch>

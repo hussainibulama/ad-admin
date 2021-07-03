@@ -1,79 +1,74 @@
-import React, {useState} from "react";
-import styled from "styled-components";
-import Profile from "../../../../assets/icons/Profile.svg";
-import Message from "../../../../assets/icons/Message.svg";
-import Lock from "../../../../assets/icons/Lock.svg";
-import InfoCircle from "../../../../assets/icons/Info-circle.svg";
-import Phone from "../../../../assets/icons/call.svg";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Profile from '../../../../assets/icons/Profile.svg';
+import Message from '../../../../assets/icons/Message.svg';
+import Lock from '../../../../assets/icons/Lock.svg';
+import InfoCircle from '../../../../assets/icons/Info-circle.svg';
+import Phone from '../../../../assets/icons/call.svg';
 import PlaceholderIcon from '../../../../assets/icons/placeholder-icon.svg';
-import Calendar from "../../../../assets/icons/Calendar.svg";
-import continueArrow from "../../../../assets/icons/continue-arrow.svg";
-
-
+import Calendar from '../../../../assets/icons/Calendar.svg';
+import continueArrow from '../../../../assets/icons/continue-arrow.svg';
 
 const AddAdmin = () => {
-    const options = [
-      { value: "Admin", label: "Admin" },
-      { value: "Marketer", label: "Marketer" },
-      { value: "DataAnalysis", label: "Data Analysis" },
-      { value: "ContentReviewer", label: "Content Reviewer" },
-      { value: "SuperAdmin", label: "Super Admin" },
-    ];
-    const [selectedOption, setSelectedOption] = useState("");
-    const [passwordShown, setPasswordShown] = useState(false);
-    const togglePasswordVisiblity = () => {
-      setPasswordShown(passwordShown ? false : true);
-    };
-    const handleTypeSelect = (e) => {
-      setSelectedOption(e.value);
-    };
+  const options = [
+    { value: 'Admin', label: 'Admin' },
+    { value: 'Marketer', label: 'Marketer' },
+    { value: 'DataAnalysis', label: 'Data Analysis' },
+    { value: 'ContentReviewer', label: 'Content Reviewer' },
+    { value: 'SuperAdmin', label: 'Super Admin' },
+  ];
+  const [selectedOption, setSelectedOption] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  const handleTypeSelect = (e) => {
+    setSelectedOption(e.value);
+  };
 
-    const customStyles = {
-      control: (styles, state) => ({
-        ...styles,
-        backgroundColor: "rgba(0,168,90,0)",
-         border: state.isFocused ? 0 : 0,
-    boxShadow: state.isFocused ? 0 : 0,
-    '&:hover': {
-       border: state.isFocused ? 0 : 0
-    }
-    
-      }),
-      indicatorSeparator: (styles) => ({ display: "none" }),
-      placeholder: (defaultStyles) => {
-        return {
-          ...defaultStyles,
-          color: "#045860",
-          fontSize: "1.2rem",
-        };
-      },
-      dropdownIndicator: (styles) => ({ color: "#045860" }),
-      option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    return {
+  const customStyles = {
+    control: (styles, state) => ({
       ...styles,
-      backgroundColor: isFocused ? "#4285F4" : "#fff",
-      color: isFocused ? "#fff" : "#263238",
-      fontSize: "1.3rem",
-      cursor: isDisabled ? "not-allowed" : "default",
-    };
-  },
-    };
-   
+      backgroundColor: 'rgba(0,168,90,0)',
+      border: state.isFocused ? 0 : 0,
+      boxShadow: state.isFocused ? 0 : 0,
+      '&:hover': {
+        border: state.isFocused ? 0 : 0,
+      },
+    }),
+    indicatorSeparator: (styles) => ({ display: 'none' }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: '#045860',
+        fontSize: '1.2rem',
+      };
+    },
+    dropdownIndicator: (styles) => ({ color: '#045860' }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? '#4285F4' : '#fff',
+        color: isFocused ? '#fff' : '#263238',
+        fontSize: '1.3rem',
+        cursor: isDisabled ? 'not-allowed' : 'default',
+      };
+    },
+  };
+
   return (
     <StyledDiv>
       <div>
         <h3 className="title">User Account Details </h3>
       </div>
       <div className="form-layout">
-      <div className="grid-cont">
-            <div className="inputWithIcon avatar d-flex align-items-center ">
-              <div className="mx-auto">
-
-              <img src={PlaceholderIcon } alt="" className="mx-auto"/>
-              </div>
+        <div className="grid-cont">
+          <div className="inputWithIcon avatar d-flex align-items-center ">
+            <div className="mx-auto">
+              <img src={PlaceholderIcon} alt="" className="mx-auto" />
             </div>
-            
           </div>
+        </div>
         <form>
           <div className="grid-cont">
             <div className="inputWithIcon">
@@ -89,23 +84,23 @@ const AddAdmin = () => {
               <input type="text" placeholder="First Name" />
             </div>
             <div className="inputWithIcon">
-            <input type="email" placeholder="Official Email" />
-            <img className="all-icons" src={Message} alt="profile" />
+              <input type="email" placeholder="Official Email" />
+              <img className="all-icons" src={Message} alt="profile" />
             </div>
           </div>
           <div className="grid-cont">
-          <div className="grid-cont">
-            <div className="inputWithIcon">
-              <input type="date" placeholder="Dirth of Birth" />
-            {/* <img className="all-icons" src={Calendar} alt="profile" /> */}
+            <div className="grid-cont">
+              <div className="inputWithIcon">
+                <input type="date" placeholder="Dirth of Birth" />
+                {/* <img className="all-icons" src={Calendar} alt="profile" /> */}
+              </div>
+              <div className="inputWithIcon">
+                <input type="text" placeholder="Gender" />
+              </div>
             </div>
             <div className="inputWithIcon">
-            <input type="text" placeholder="Gender" />
-            </div>
-          </div>
-            <div className="inputWithIcon">
-            <input type="text" placeholder="Phone Number" />
-            <img className="all-icons" src="/assets/call.svg" alt="profile" />
+              <input type="text" placeholder="Phone Number" />
+              <img className="all-icons" src="/assets/call.svg" alt="profile" />
             </div>
           </div>
 
@@ -133,16 +128,16 @@ const StyledDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
-    margin-top:2em;
-    .grid-cont{
-      margin-top:0em;
+    margin-top: 2em;
+    .grid-cont {
+      margin-top: 0em;
     }
-    .avatar{
+    .avatar {
       background: rgba(251, 188, 5, 0.1);
-      border: 1px solid #F5F5F5;
+      border: 1px solid #f5f5f5;
       box-sizing: border-box;
       border-radius: 10px;
-      height:150px
+      height: 150px;
     }
   }
   .title {
@@ -152,9 +147,11 @@ const StyledDiv = styled.div`
   .form-layout {
     // padding: 4rem 8rem;
   }
-  input[type="text"], input[type="email"], input[type="date"] {
+  input[type='text'],
+  input[type='email'],
+  input[type='date'] {
     width: 100%;
-    height:70px;
+    height: 70px;
     border: none;
     border-radius: 4px;
     margin: 8px 0;
@@ -169,17 +166,16 @@ const StyledDiv = styled.div`
     font-size: 1.2rem;
   }
 
-
-
-  .inputWithIcon input[type="text"], .inputWithIcon input[type="email"], .inputWithIcon input[type="date"] {
+  .inputWithIcon input[type='text'],
+  .inputWithIcon input[type='email'],
+  .inputWithIcon input[type='date'] {
     color: #aac7b9;
   }
 
-  .inputWithIcon input[type="text"]::placeholder,.inputWithIcon input[type="email"]::placeholder {
+  .inputWithIcon input[type='text']::placeholder,
+  .inputWithIcon input[type='email']::placeholder {
     color: #aac7b9;
   }
-
- 
 
   .inputWithIcon {
     position: relative;
@@ -193,7 +189,7 @@ const StyledDiv = styled.div`
     color: #aaa;
     transition: 0.3s;
     padding-right: 1rem;
-    margin-top:.5em;
+    margin-top: 0.5em;
   }
   .inputWithIcon .eye-icon {
     position: absolute;
@@ -258,19 +254,19 @@ const StyledDiv = styled.div`
     justify-content: center;
     border-radius: 2px;
   }
-  .select[class*="-indicatorSeparator"] {
+  .select[class*='-indicatorSeparator'] {
     display: none !important;
   }
-  .select[class*="-container"] {
+  .select[class*='-container'] {
     background: rgba(0, 168, 90, 0.05);
   }
   .select__menu {
     position: absolute;
     right: 0%;
   }
-  .select__single-value{
-      font-size: 1.2rem;
-      color: #045860;
+  .select__single-value {
+    font-size: 1.2rem;
+    color: #045860;
   }
   @media only screen and (min-width: 280px) and (max-width: 767px) {
     padding: 1rem;

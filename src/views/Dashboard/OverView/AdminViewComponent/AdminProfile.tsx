@@ -1,19 +1,19 @@
-import React, {useState} from "react";
-import styled from "styled-components";
-import Lock from "../../../../assets/icons/Lock.svg";
-import Delete from "../../../../assets/icons/delete-user.svg";
-import Edit from "../../../../assets/icons/edit-user.svg";
-import Profile from "../../../../assets/icons/Profile.svg";
-import Message from "../../../../assets/icons/Message.svg";
-import { Link } from "react-router-dom";
-import PasswordChange from "./PasswordChange"
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Lock from '../../../../assets/icons/Lock.svg';
+import Delete from '../../../../assets/icons/delete-user.svg';
+import Edit from '../../../../assets/icons/edit-user.svg';
+import Profile from '../../../../assets/icons/Profile.svg';
+import Message from '../../../../assets/icons/Message.svg';
+import { Link } from 'react-router-dom';
+import PasswordChange from './PasswordChange';
 
 const AdminProfile = () => {
-    const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
-    const handleShow = () => {
-        setShow(!show)
-    }
+  const handleShow = () => {
+    setShow(!show);
+  };
   return (
     <StyledProfile>
       <div className="grid-cont-one">
@@ -211,7 +211,7 @@ const StyledProfile = styled.div`
 
   .slider:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 18px;
     width: 18px;
     left: 4px;
@@ -288,11 +288,11 @@ const StyledProfile = styled.div`
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1365px) {
-  background-color: #fff;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 20px;
-  padding: 3rem;
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 3rem;
   }
 `;
 

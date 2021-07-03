@@ -19,7 +19,7 @@ import { cardData } from '../data';
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-const userId = 4
+  const userId = 4;
   return (
     <>
       {showModal && <DeleteModal isClose={setShowModal} />}

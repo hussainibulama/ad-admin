@@ -1,63 +1,61 @@
-import React, {useState} from "react";
-import styled from "styled-components";
-import Profile from "../../../../assets/icons/Profile.svg";
-import Message from "../../../../assets/icons/Message.svg";
-import Lock from "../../../../assets/icons/Lock.svg";
-import InfoCircle from "../../../../assets/icons/Info-circle.svg";
-import passwordshow from "../../../../assets/icons/passwordshow.svg";
-import ShieldDone from "../../../../assets/icons/Shield-done.svg";
-import continueArrow from "../../../../assets/icons/continue-arrow.svg";
-import Select from "react-select";
-
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Profile from '../../../../assets/icons/Profile.svg';
+import Message from '../../../../assets/icons/Message.svg';
+import Lock from '../../../../assets/icons/Lock.svg';
+import InfoCircle from '../../../../assets/icons/Info-circle.svg';
+import passwordshow from '../../../../assets/icons/passwordshow.svg';
+import ShieldDone from '../../../../assets/icons/Shield-done.svg';
+import continueArrow from '../../../../assets/icons/continue-arrow.svg';
+import Select from 'react-select';
 
 const AddAdmin = () => {
-    const options = [
-      { value: "Admin", label: "Admin" },
-      { value: "Marketer", label: "Marketer" },
-      { value: "DataAnalysis", label: "Data Analysis" },
-      { value: "ContentReviewer", label: "Content Reviewer" },
-      { value: "SuperAdmin", label: "Super Admin" },
-    ];
-    const [selectedOption, setSelectedOption] = useState("");
-    const [passwordShown, setPasswordShown] = useState(false);
-    const togglePasswordVisiblity = () => {
-      setPasswordShown(passwordShown ? false : true);
-    };
-    const handleTypeSelect = (e) => {
-      setSelectedOption(e.value);
-    };
+  const options = [
+    { value: 'Admin', label: 'Admin' },
+    { value: 'Marketer', label: 'Marketer' },
+    { value: 'DataAnalysis', label: 'Data Analysis' },
+    { value: 'ContentReviewer', label: 'Content Reviewer' },
+    { value: 'SuperAdmin', label: 'Super Admin' },
+  ];
+  const [selectedOption, setSelectedOption] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  const handleTypeSelect = (e) => {
+    setSelectedOption(e.value);
+  };
 
-    const customStyles = {
-      control: (styles, state) => ({
-        ...styles,
-        backgroundColor: "rgba(0,168,90,0)",
-         border: state.isFocused ? 0 : 0,
-    boxShadow: state.isFocused ? 0 : 0,
-    '&:hover': {
-       border: state.isFocused ? 0 : 0
-    }
-    
-      }),
-      indicatorSeparator: (styles) => ({ display: "none" }),
-      placeholder: (defaultStyles) => {
-        return {
-          ...defaultStyles,
-          color: "#045860",
-          fontSize: "1.2rem",
-        };
-      },
-      dropdownIndicator: (styles) => ({ color: "#045860" }),
-      option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    return {
+  const customStyles = {
+    control: (styles, state) => ({
       ...styles,
-      backgroundColor: isFocused ? "#4285F4" : "#fff",
-      color: isFocused ? "#fff" : "#263238",
-      fontSize: "1.3rem",
-      cursor: isDisabled ? "not-allowed" : "default",
-    };
-  },
-    };
-   
+      backgroundColor: 'rgba(0,168,90,0)',
+      border: state.isFocused ? 0 : 0,
+      boxShadow: state.isFocused ? 0 : 0,
+      '&:hover': {
+        border: state.isFocused ? 0 : 0,
+      },
+    }),
+    indicatorSeparator: (styles) => ({ display: 'none' }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: '#045860',
+        fontSize: '1.2rem',
+      };
+    },
+    dropdownIndicator: (styles) => ({ color: '#045860' }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? '#4285F4' : '#fff',
+        color: isFocused ? '#fff' : '#263238',
+        fontSize: '1.3rem',
+        cursor: isDisabled ? 'not-allowed' : 'default',
+      };
+    },
+  };
+
   return (
     <StyledDiv>
       <div>
@@ -111,7 +109,7 @@ const AddAdmin = () => {
 
           <div className="inputWithIcon mt-3">
             <input
-              type={passwordShown ? "text" : "password"}
+              type={passwordShown ? 'text' : 'password'}
               placeholder="Password"
             />
             <img className="all-icons" src={Lock} alt="lock" />
@@ -155,7 +153,7 @@ const StyledDiv = styled.div`
   .form-layout {
     padding: 4rem 8rem;
   }
-  input[type="text"] {
+  input[type='text'] {
     width: 100%;
     border: none;
     border-radius: 4px;
@@ -185,7 +183,7 @@ const StyledDiv = styled.div`
     padding: 0.8rem 1rem;
     font-size: 1.2rem;
   }
-  input[type="password"] {
+  input[type='password'] {
     width: 100%;
     border: none;
     border-radius: 4px;
@@ -201,7 +199,7 @@ const StyledDiv = styled.div`
     font-size: 1.2rem;
   }
 
-  .inputWithIcon input[type="text"] {
+  .inputWithIcon input[type='text'] {
     padding-left: 3rem;
     color: #aac7b9;
   }
@@ -210,15 +208,15 @@ const StyledDiv = styled.div`
     padding-right: 1rem;
     color: #aac7b9;
   }
-  .inputWithIcon input[type="text"]::placeholder {
+  .inputWithIcon input[type='text']::placeholder {
     color: #aac7b9;
   }
 
-  .inputWithIcon input[type="password"] {
+  .inputWithIcon input[type='password'] {
     padding-left: 3rem;
     color: #aac7b9;
   }
-  .inputWithIcon input[type="password"]::placeholder {
+  .inputWithIcon input[type='password']::placeholder {
     color: #aac7b9;
   }
 
@@ -304,19 +302,19 @@ const StyledDiv = styled.div`
     justify-content: center;
     border-radius: 2px;
   }
-  .select[class*="-indicatorSeparator"] {
+  .select[class*='-indicatorSeparator'] {
     display: none !important;
   }
-  .select[class*="-container"] {
+  .select[class*='-container'] {
     background: rgba(0, 168, 90, 0.05);
   }
   .select__menu {
     position: absolute;
     right: 0%;
   }
-  .select__single-value{
-      font-size: 1.2rem;
-      color: #045860;
+  .select__single-value {
+    font-size: 1.2rem;
+    color: #045860;
   }
   @media only screen and (min-width: 280px) and (max-width: 767px) {
     padding: 1rem;

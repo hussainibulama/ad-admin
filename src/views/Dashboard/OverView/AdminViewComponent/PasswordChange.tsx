@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const PasswordChange = ({ show, setShow, handleShow }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
     <StyledDiv>
       <div className={showHideClassName}>
@@ -15,7 +15,7 @@ const PasswordChange = ({ show, setShow, handleShow }) => {
           <div>
             <h5 className="header-title">Change Password</h5>
           </div>
-          <form className="mt-4"> 
+          <form className="mt-4">
             <div className="grid-cont">
               <div className="inputWithIcon">
                 <label htmlFor="new">
@@ -63,7 +63,7 @@ const StyledDiv = styled.div`
     border: 1px solid #f0f0f0;
     border-radius: 10px;
   }
-  input[type="password"] {
+  input[type='password'] {
     width: 100%;
     border: none;
     border-radius: 4px;
@@ -78,11 +78,11 @@ const StyledDiv = styled.div`
     padding: 0.8rem 1rem;
     font-size: 1.2rem;
   }
-  .inputWithIcon input[type="password"] {
+  .inputWithIcon input[type='password'] {
     color: #aac7b9;
     border: 1px solid #add9ab;
   }
-  .inputWithIcon input[type="password"]::placeholder {
+  .inputWithIcon input[type='password']::placeholder {
     color: #045860;
   }
 
@@ -160,7 +160,7 @@ const StyledDiv = styled.div`
       border: 1px solid #f0f0f0;
       border-radius: 10px;
     }
-    .inputWithIcon input[type="password"] {
+    .inputWithIcon input[type='password'] {
       color: #aac7b9;
       border: 1px solid #add9ab;
       height: 2rem;
