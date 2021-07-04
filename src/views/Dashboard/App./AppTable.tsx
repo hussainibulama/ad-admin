@@ -3,6 +3,7 @@ import Table from '../../../components/Table';
 import eyeIcon from '../../../assets/icons/Show.png';
 import delIcon from '../../../assets/icons/delete-user.png';
 import caretDown from '../../../assets/icons/caret-down.png';
+import UpdateBtn from '../AppBuild/UpdateBtn';
 import styled from 'styled-components';
 
 const AppTable = () => {
@@ -12,7 +13,11 @@ const AppTable = () => {
     { name: 'user', displayName: 'User' },
     { name: 'lastVersionUpdate', displayName: 'Last Version Update' },
     { name: 'pendingVersionUpdate', displayName: 'Pending Version Update' },
-    // { name: 'recentReferrals', displayName: 'Recent Referrals' },
+    // { name: 'action', displayName: 'Action' },
+    {
+      name: 'action',
+      displayName: <p className="mb-0 text-center">Action</p>,
+    },
   ];
 
   type TableData = {
@@ -97,11 +102,8 @@ const AppTable = () => {
                 return (
                   <div className="cursor-pointer d-flex">
                     {/* <div id="DisputePopover">...</div> */}
-                    <div className="col-1 eye">
-                      <img src={eyeIcon} alt="view" />
-                    </div>
-                    <div className="col-1 delete">
-                      <img src={delIcon} alt="delete" />
+                    <div className="col-1 eye ml-5">
+                      <UpdateBtn />
                     </div>
                   </div>
                 );
