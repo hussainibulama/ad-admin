@@ -33,6 +33,7 @@ import Referrals from './Referrals/Referrals';
 import App from './App./App';
 import AppBuild from './AppBuild/AppBuild';
 import BuildDetails from './AppBuild/BuildDetails';
+import Notifications from "./Notifications./Notification"
 function Dashboard(props) {
   const {
     match: { path },
@@ -125,6 +126,11 @@ function Dashboard(props) {
 
         <Route path={`${path}/app`}>
           <App />
+        </Route>
+
+
+        <Route path={`${path}/notifications`}>
+          <Notifications />
         </Route>
 
         <Route path={`${path}/footer`}>
