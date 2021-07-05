@@ -70,7 +70,7 @@ const AdvertCard = () => {
             <div>
               <div className="switch-toggle-div">
                 {" "}
-                <label className="switch">
+                <label className="switch-div">
                   <span className="text-span">Adverts</span>
                   <input type="checkbox" />
                   <span className="slider round"></span>
@@ -134,7 +134,7 @@ const StyledDiv = styled.div`
   }
 
   /* The switch - the box around the slider */
-  .switch {
+  .switch-div {
     position: relative;
     display: inline-block;
     height: 25px;
@@ -142,7 +142,7 @@ const StyledDiv = styled.div`
     margin-top: 0.3rem;
   }
 
-  .switch input {
+  .switch-div input {
     opacity: 0;
     width: 0;
     height: 0;
