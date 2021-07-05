@@ -8,26 +8,25 @@ import SalesPointTable from './SalesPointTable';
 const BusinessProduct = () => {
   return (
     <section className="table-section">
-        <div className="top-section w-100 row justify-content-center align-items-center px-2">
+      <div className="top-section w-100 row justify-content-center align-items-center px-2">
         <div className="col-4 top-section-text">
-            <p>Sales Points</p>
+          <p>Sales Points</p>
         </div>
         <div className="row  col-8 justify-content-end">
-            <div className=" mr-4  ">
+          <div className=" mr-4  ">
             <span className="green mr-2">Sort</span>
             <img src={FilterIcon} alt="filter" />
-            </div>
-            <div className="  ">
+          </div>
+          <div className="  ">
             <SearchInput />
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
 
-        <section>
-        <SalesPointTable/>
-        </section>
+      <section>
+        <SalesPointTable />
+      </section>
     </section>
-
   );
 };
 

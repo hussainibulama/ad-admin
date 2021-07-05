@@ -24,6 +24,7 @@ const state = {
       color: '#f32121',
       borderColor: '#F9A825',
       borderWidth: 0,
+      borderRadius: 10,
       data: [65, 59, 80, 81, 56],
     },
   ],

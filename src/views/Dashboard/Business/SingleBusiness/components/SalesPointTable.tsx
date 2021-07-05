@@ -6,16 +6,15 @@ import delIcon from '../../../../../assets/icons/delete-user.png';
 import caretDown from '../../../../../assets/icons/caret-down.png';
 import styled from 'styled-components';
 
-
 const SalesPointTable = () => {
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
       name: 'name',
-      displayName:  'Name'
+      displayName: 'Name',
     },
     {
       name: 'total',
-        displayName:  'Total Sales Volume'
+      displayName: 'Total Sales Volume',
     },
     { name: 'average', displayName: 'Avg. Daily Sales' },
     { name: 'lastSold', displayName: 'Last Sold' },
@@ -44,11 +43,10 @@ const SalesPointTable = () => {
   const products1: TableData[] = [
     {
       id: '1',
-     name: 'Efficient John',
+      name: 'Efficient John',
       total: '2,345,378',
-    average:645000,
-      
-       
+      average: 645000,
+
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
@@ -56,24 +54,21 @@ const SalesPointTable = () => {
       id: '1',
       name: 'Ope Pearls',
       total: '2,345,378',
-    average:645000,
-      
-      
+      average: 645000,
+
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
-     
+
     {
       id: '1',
       name: 'Efficient John',
       total: '2,345,378',
-    average:645000,
-      
-      
+      average: 645000,
+
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
-     
   ];
 
   return (

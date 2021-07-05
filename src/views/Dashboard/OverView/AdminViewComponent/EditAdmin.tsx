@@ -1,53 +1,53 @@
-import React,{useState} from "react";
-import styled from "styled-components";
-import Profile from "../../../../assets/icons/Profile.svg";
-import Message from "../../../../assets/icons/Message.svg";
-import ShieldDone from "../../../../assets/icons/Shield-done.svg";
-import continueArrow from "../../../../assets/icons/continue-arrow.svg";
-import Select from "react-select";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Profile from '../../../../assets/icons/Profile.svg';
+import Message from '../../../../assets/icons/Message.svg';
+import ShieldDone from '../../../../assets/icons/Shield-done.svg';
+import continueArrow from '../../../../assets/icons/continue-arrow.svg';
+import Select from 'react-select';
 
 const EditAdmin = () => {
-     const options = [
-       { value: "Active", label: "Active" },
-       { value: "Away", label: "Away" },
-       { value: "Disable", label: "Disable" },
-     ];
-    const [selectedOption, setSelectedOption] = useState("");
+  const options = [
+    { value: 'Active', label: 'Active' },
+    { value: 'Away', label: 'Away' },
+    { value: 'Disable', label: 'Disable' },
+  ];
+  const [selectedOption, setSelectedOption] = useState('');
 
-     const customStyles = {
-       control: (styles, state) => ({
-         ...styles,
-         backgroundColor: "rgba(0, 168, 90, 0.1);",
-         borderRadius: "10px",
-         border: state.isFocused ? 0 : 0,
-         boxShadow: state.isFocused ? 0 : 0,
-         "&:hover": {
-           border: state.isFocused ? 0 : 0,
-         },
-         paddingLeft: "0.8rem",
-         paddingRight: "0.4rem",
-       }),
-       indicatorSeparator: (styles) => ({ display: "none" }),
-       placeholder: (defaultStyles) => {
-         return {
-           ...defaultStyles,
-           color: "#029244",
-           fontSize: "1rem",
-           fontWeight: "700",
-         };
-       },
-       dropdownIndicator: (styles) => ({ color: "#045860" }),
-       option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-         return {
-           ...styles,
-           backgroundColor: isFocused ? "#4285F4" : "#fff",
-           color: isFocused ? "#fff" : "#263238",
-           fontSize: "1.3rem",
-           cursor: isDisabled ? "not-allowed" : "default",
-         };
-       },
-     };
-   
+  const customStyles = {
+    control: (styles, state) => ({
+      ...styles,
+      backgroundColor: 'rgba(0, 168, 90, 0.1);',
+      borderRadius: '10px',
+      border: state.isFocused ? 0 : 0,
+      boxShadow: state.isFocused ? 0 : 0,
+      '&:hover': {
+        border: state.isFocused ? 0 : 0,
+      },
+      paddingLeft: '0.8rem',
+      paddingRight: '0.4rem',
+    }),
+    indicatorSeparator: (styles) => ({ display: 'none' }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: '#029244',
+        fontSize: '1rem',
+        fontWeight: '700',
+      };
+    },
+    dropdownIndicator: (styles) => ({ color: '#045860' }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return {
+        ...styles,
+        backgroundColor: isFocused ? '#4285F4' : '#fff',
+        color: isFocused ? '#fff' : '#263238',
+        fontSize: '1.3rem',
+        cursor: isDisabled ? 'not-allowed' : 'default',
+      };
+    },
+  };
+
   return (
     <StyledEdit>
       <div className="grid-cont-header">
@@ -144,7 +144,7 @@ const StyledEdit = styled.div`
     border-radius: 10px;
     margin-top: 5rem;
   }
-  input[type="text"] {
+  input[type='text'] {
     width: 100%;
     border: none;
     border-radius: 4px;
@@ -159,11 +159,11 @@ const StyledEdit = styled.div`
     padding: 0.8rem 1rem;
     font-size: 1.2rem;
   }
-  .inputWithIcon input[type="text"] {
+  .inputWithIcon input[type='text'] {
     padding-left: 3rem;
     color: #aac7b9;
   }
-  .inputWithIcon input[type="text"]::placeholder {
+  .inputWithIcon input[type='text']::placeholder {
     color: #045860;
   }
   .inputWithIcon .all-icons {

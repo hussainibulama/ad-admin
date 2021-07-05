@@ -104,7 +104,7 @@ const Transaction = () => {
               <img src={FilterIcon} alt="filter" />
             </div>
             <div className="col-md-4 ml-4 top-section-search">
-              <SearchInput />
+              <SearchInput placeholder={'Search'} />
             </div>
           </div>
         </div>

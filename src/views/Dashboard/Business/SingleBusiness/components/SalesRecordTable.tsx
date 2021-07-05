@@ -6,16 +6,15 @@ import delIcon from '../../../../../assets/icons/delete-user.png';
 import caretDown from '../../../../../assets/icons/caret-down.png';
 import styled from 'styled-components';
 
-
 const SalesRecordTable = () => {
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
       name: 'id',
-      displayName:  'OrderId'
+      displayName: 'OrderId',
     },
     {
       name: 'discount',
-        displayName:  'Discount'
+      displayName: 'Discount',
     },
     { name: 'barcode', displayName: 'Barcode' },
     { name: 'Qty', displayName: 'Qty Sold' },
@@ -30,12 +29,14 @@ const SalesRecordTable = () => {
         </div>
       ),
     },
-    { name: 'action',  displayName: (
+    {
+      name: 'action',
+      displayName: (
         <div className="action">
-          <span  >Action</span>
-          
+          <span>Action</span>
         </div>
-      ), },
+      ),
+    },
   ];
 
   type TableData = {
@@ -44,7 +45,7 @@ const SalesRecordTable = () => {
     barcode: string;
     Qty: number;
     soldby: string;
-    date:string
+    date: string;
     lastSold: string;
     status: string;
     action?: React.ReactNode;
@@ -53,36 +54,35 @@ const SalesRecordTable = () => {
   const products1: TableData[] = [
     {
       id: '1',
-     discount: '10%',
-     date:'20 April, 2020',
-      barcode:'12345667',
-      Qty:1,
-      soldby:'Ope pearls',
+      discount: '10%',
+      date: '20 April, 2020',
+      barcode: '12345667',
+      Qty: 1,
+      soldby: 'Ope pearls',
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
     {
       id: '1',
       discount: '20%',
-     date:'20 April, 2020',
-      barcode:'12345667',
-      Qty:1,
-      soldby:'Ope pearls',
+      date: '20 April, 2020',
+      barcode: '12345667',
+      Qty: 1,
+      soldby: 'Ope pearls',
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
-     
+
     {
       id: '1',
       discount: '10%',
-     date:'20 April, 2020',
-      barcode:'12345667',
-      Qty:1,
-      soldby:'Ope pearls',
+      date: '20 April, 2020',
+      barcode: '12345667',
+      Qty: 1,
+      soldby: 'Ope pearls',
       lastSold: '26 Jan 2020',
       status: 'Active',
     },
-     
   ];
 
   return (
