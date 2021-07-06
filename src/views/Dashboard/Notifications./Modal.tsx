@@ -83,7 +83,7 @@ const ModalBox = styled.div`
 
   .modal-title {
     /* clear: both; */
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import Select from 'react-select';
 import Cards from './NotifyCards';
 import Selects from './SelectNotify';
-import Modal from "./Modal"
+import Modal from './Modal';
 import arrow1 from '../../../assets/icons/whitearrow.svg';
 import arrowRight from '../../../assets/icons/arrowright2.svg';
 import image2 from '../../../assets/icons/Image2.svg';
@@ -50,107 +50,113 @@ const Notification = () => {
     setSelectedOptionUser(e.value);
   };
 
- 
+  //Modal Toggle
+  const [modalInOpen, setModalIsOpen] = useState(false);
+  const modalToggle = () => {
+    setModalIsOpen(true);
+  };
 
-   //Modal Toggle
- const [modalInOpen, setModalIsOpen] = useState(false);
- const modalToggle = () => {
-   setModalIsOpen(true);
- };
-
- const close = () => {
-   setModalIsOpen(false);
- };
+  const close = () => {
+    setModalIsOpen(false);
+  };
 
   return (
-      <>
-    <NotificationWrapper>
-      <h2 className="notify-title">Notifications</h2>
+    <>
+      <NotificationWrapper>
+        <h2 className="notify-title">Notifications</h2>
 
-      <div className="notify-box">
-        <div className="create-subbox">
-          <h2 className="create-title">Create Notifications</h2>
+        <div className="notify-box">
+          <div className="create-subbox">
+            <h2 className="create-title">Create Notifications</h2>
 
-          <form className="notify-form">
-            <div className="form-group form-text">
-              {/* <label htmlFor="exampleInputEmail1">Email address */}
-              <input
-                type="text"
-                className="form-control"
-                id="text"
-                aria-describedby="emailHelp"
-                placeholder={'Notification title'}
+            <form className="notify-form">
+              <div className="form-group form-text">
+                {/* <label htmlFor="exampleInputEmail1">Email address */}
+                <input
+                  type="text"
+                  className="form-control"
+                  id="text"
+                  aria-describedby="emailHelp"
+                  placeholder={'Notification title'}
+                />
+              </div>
+
+              <div>
+                <textarea
+                  className="form-textarea"
+                  // cols={45}
+                  rows={10}
+                  placeholder={'Message'}
+                ></textarea>
+              </div>
+
+              <div className="notify-upload">
+                <label htmlFor="fileInput" className="form-label">
+                  <img className="image-notify" src={image2} alt="arrowright" />
+                  Upload Picture
+                </label>
+
+                <button onClick={handleUpload} className="uploades">
+                  <img src={arrowRight} alt="arrowright" />
+                </button>
+
+                <input
+                  type="file"
+                  name="file"
+                  id="fileInput"
+                  style={{ display: 'none' }}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <p className="sendas">Send as</p>
+
+              <Selects
+                options={options}
+                selectedOption={selectedOptionPush}
+                handleTypeSelect={handlePushSelect}
+                placeholder={'Push Notifications'}
               />
-            </div>
+              <Selects
+                options={options}
+                selectedOption={selectedOptionTo}
+                handleTypeSelect={handleSendSelect}
+                placeholder={'Send to'}
+              />
+              <Selects
+                options={options3}
+                selectedOption={selectedOptionUser}
+                handleTypeSelect={handleUserSelect}
+                placeholder={'Select User'}
+              />
 
-            <div>
-              <textarea
-                className="form-textarea"
-                // cols={45}
-                rows={10}
-                placeholder={'Message'}
-              ></textarea>
-            </div>
-
-            <div className="notify-upload">
-              <label htmlFor="fileInput" className="form-label">
-                <img className="image-notify" src={image2} alt="arrowright" />
-                Upload Picture
-              </label>
-
-              <button onClick={handleUpload} className="uploades">
-                <img src={arrowRight} alt="arrowright" />
+              <button className="notify-btn">
+                <img src={arrow1} alt={'send'} />
+                Send
               </button>
+            </form>
+          </div>
 
-              <input
-                type="file"
-                name="file"
-                id="fileInput"
-                style={{ display: 'none' }}
-                onChange={handleChange}
-              />
+          <div className="previous-subbox">
+            <h2 className="previous-title">Previous Sent Notifications</h2>
+            <Cards modalToggle={modalToggle} border={true} />
+            <div className="sent-box">
+              <p className="sent-to">
+                sent to: <span>23488</span>
+              </p>
+              <p>
+                <button>Resend</button>
+              </p>
             </div>
-
-            <p className="sendas">Send as</p>
-
-            <Selects
-              options={options}
-              selectedOption={selectedOptionPush}
-              handleTypeSelect={handlePushSelect}
-              placeholder={'Push Notifications'}
-            />
-            <Selects
-              options={options}
-              selectedOption={selectedOptionTo}
-              handleTypeSelect={handleSendSelect}
-              placeholder={'Send to'}
-            />
-            <Selects
-              options={options3}
-              selectedOption={selectedOptionUser}
-              handleTypeSelect={handleUserSelect}
-              placeholder={'Select User'}
-            />
-
-            <button className="notify-btn">
-              <img src={arrow1} alt={'send'} />
-              Send
-            </button>
-          </form>
+            <Cards modalToggle={modalToggle} />
+            <Cards modalToggle={modalToggle} />
+            <Cards modalToggle={modalToggle} />
+            <Cards modalToggle={modalToggle} />
+            <Cards modalToggle={modalToggle} />
+          </div>
         </div>
-
-        <div className="previous-subbox">
-          <h2 className="previous-title">Previous Sent Notifications</h2>
-          <Cards modalToggle={modalToggle}/>
-          <Cards modalToggle={modalToggle}/>
-          <Cards modalToggle={modalToggle}/>
-          <Cards modalToggle={modalToggle}/>
-          <Cards modalToggle={modalToggle}/>
-          <Cards modalToggle={modalToggle}/>
-        </div>
-      </div>
-    </NotificationWrapper>
-    {modalInOpen && <Modal close={close} />}
+      </NotificationWrapper>
+      {modalInOpen && <Modal close={close} />}
     </>
   );
 };
@@ -169,7 +175,8 @@ const NotificationWrapper = styled.div`
   }
 
   .notify-box,
-  .notify-upload {
+  .notify-upload,
+  .sent-box {
     display: flex;
     justify-content: space-between;
   }
@@ -281,6 +288,46 @@ const NotificationWrapper = styled.div`
   .previous-title {
     font-size: 0.9rem;
     margin-bottom: 2rem;
+  }
+
+  .sent-box {
+    margin: 1rem 0;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+
+  .sent-to {
+    color: #7b7b7b;
+    font-weight: normal;
+  }
+
+  .sent-box span {
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #029244;
+  }
+
+  .sent-box button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-weight: bold;
+    background: #00a85a;
+    border: none;
+    border-radius: 5px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .notify-box {
+      flex-direction: column;
+    }
+
+    .create-subbox,
+    .previous-subbox {
+      flex-basis: 100%;
+      width: 100%;
+    }
   }
 `;
 
