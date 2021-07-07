@@ -30,10 +30,10 @@ import AdsDetails from '../Business/Advert/AdsDetails/index';
 import AdvertView from '../Business/Advert/AdvertView/index';
 import Transactions from './Transactions/Transaction';
 import Referrals from './Referrals/Referrals';
-import App from './App./App';
+import App from './App/App';
 import AppBuild from './AppBuild/AppBuild';
 import BuildDetails from './AppBuild/BuildDetails';
-import Notifications from "./Notifications./Notification"
+import Notifications from "./Notifications/Notification"
 function Dashboard(props) {
   const {
     match: { path },
