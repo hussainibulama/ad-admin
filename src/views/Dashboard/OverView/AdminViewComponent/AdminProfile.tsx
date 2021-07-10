@@ -70,7 +70,7 @@ const AdminProfile = () => {
       </div>
 
       <div className="toggle-div">
-        <label className="switch">
+        <label className="switch-red">
           <span className="text-span">Disabled</span>
           <input type="checkbox" />
           <span className="slider round"></span>
@@ -183,14 +183,14 @@ const StyledProfile = styled.div`
     margin-left: auto;
   }
   /* The switch - the box around the slider */
-  .switch {
+  .switch-red {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
   }
 
-  .switch input {
+  .switch-red input {
     opacity: 0;
     width: 0;
     height: 0;

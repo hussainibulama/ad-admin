@@ -33,6 +33,10 @@ import Referrals from './Referrals/Referrals';
 import App from './App/App';
 import AppBuild from './AppBuild/AppBuild';
 import BuildDetails from './AppBuild/BuildDetails';
+import Errors from '../Errors/index';
+import ErrorsView from '../Errors/ErrorsView/index';
+import AppReviews from '../AppReviews/index';
+
 import Notifications from "./Notifications/Notification"
 function Dashboard(props) {
   const {
@@ -104,6 +108,12 @@ function Dashboard(props) {
         <Route exact path="/app/business/advert" component={AdvertView} />
         <Route exact path="/app/business/advert-list" component={AdvertList} />
         <Route exact path="/app/business/ads-details" component={AdsDetails} />
+
+        {/*Errors */}
+        <Route exact path="/app/errors" component={Errors} />
+        <Route exact path="/app/errors-view" component={ErrorsView} />
+
+        <Route exact path="/app/app_reviews" component={AppReviews} />
 
         <Route exact path={`${path}/footer`} />
 

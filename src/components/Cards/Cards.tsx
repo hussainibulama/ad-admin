@@ -50,7 +50,7 @@ export const UpIconCards = ({
       <div>
         <div className="flex-container">
           <div className="flex-item-one">
-            <p className="title">{title}</p>
+            <p className="title-txt">{title}</p>
           </div>
           <div className="flex-item-two">
             <img src={icon} alt="bussiness-icon" />
@@ -85,7 +85,7 @@ export const DownIconCards = ({
     >
       <div>
         <div>
-          <p className="title mt-2">{title}</p>
+          <p className="title-txt mt-2">{title}</p>
         </div>
 
         <div className="flex-container num-icon">
@@ -93,7 +93,7 @@ export const DownIconCards = ({
             <p className="amount-txt">{amount}</p>
           </div>
           <div className="flex-item-two">
-            <img src={icon} alt="bussiness-icon" />
+            <img src={icon}  />
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ export const MixedIcons = ({
       secondTextColor={secondTextColor}
     >
       <div className="flex-container">
-        <div className="title">{title}</div>
+        <div className="title-txt">{title}</div>
         <div>
           <img className="icon1" src={icon1} alt="" />
         </div>
@@ -174,8 +174,8 @@ const UpIconCardStyle = styled.div`
     color: ${(props: CardProps) => props.numberColor};
     margin-bottom: 0;
   }
-  .title {
-    font-weight: 300;
+  .title-txt {
+    font-weight: 600;
     font-size: 1.1rem;
     font-size: 14px;
     margin-bottom: 0;
@@ -208,8 +208,8 @@ const MixedStyle = styled.div`
   .last-images {
     float: right;
   }
-  .title {
-    font-weight: 400;
+  .title-txt {
+    font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 0;
     color: ${(props: MixedCardProps) => props.textColor};
