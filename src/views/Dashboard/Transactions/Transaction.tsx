@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Table from './table';
-import Dots from '../OverView/Dots';
+import Dots from '../Overview/Dots';
 import { MiniChart1, MiniChart2, MainChart } from './Charts';
 import FilterIcon from '../../../assets/icons/Filter.png';
 import SearchInput from '../../../components/SearchInput/search-input.';

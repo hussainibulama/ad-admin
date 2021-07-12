@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { MiniChart1 } from '../../../Dashboard/OverView/MiniCharts';
-import { MiniChart2 } from '../../../Dashboard/OverView/MiniCharts';
+import { MiniChart1 } from '../../../Dashboard/Overview/MiniCharts';
+import { MiniChart2 } from '../../../Dashboard/Overview/MiniCharts';
 import Clicks from '../../../../assets/icons/clicks-icon.svg';
 import Chart from '../../../../assets/icons/impression-chart.svg';
 import AdvertLineChart from './AdvertLineChart';
