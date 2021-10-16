@@ -59,4 +59,3 @@ const DotsWrapper = styled.div`
 `;
 
 export default Dots;
-

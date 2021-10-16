@@ -2,7 +2,7 @@ import React from 'react';
 import { Chart1, Chart2 } from './Charts';
 import orange from '../../../assets/icons/orangeDownload.svg';
 import green from '../../../assets/icons/greenDownload.svg';
-import Dots from '../Overview/Dots';
+import Dots from '../OverView/Dots';
 import Table from './AppTable';
 import UpdateBtn from '../AppBuild/UpdateBtn';
 import Duration from '../Referrals/Duration';

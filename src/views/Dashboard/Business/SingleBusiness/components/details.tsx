@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const DetailsCard = () => {
-  const [collapse, setCollapse] = useState(false);
-
   return (
     <>
       <DetailsWrapper>
@@ -28,26 +26,18 @@ const DetailsCard = () => {
         <div className="details">
           <div className="left">
             <h2 className="title">Business Details</h2>
-            {collapse ? (
-              <>
-                {' '}
-                <p className="phone">
-                  <span>
-                    <img src="/assets/call.svg" alt="" />
-                  </span>
-                  +234 801 234 5678
-                </p>
-                <p className="email">
-                  <span>
-                    <img src="/assets/message.svg" alt="" />
-                  </span>
-                  support@admoni.com
-                </p>
-              </>
-            ) : (
-              ''
-            )}
-
+            <p className="phone">
+              <span>
+                <img src="/assets/call.svg" alt="" />
+              </span>
+              +234 801 234 5678
+            </p>
+            <p className="email">
+              <span>
+                <img src="/assets/message.svg" alt="" />
+              </span>
+              support@admoni.com
+            </p>
             <p className="notify">
               <span>
                 <img src="/assets/Chat.svg" alt="" />
@@ -56,44 +46,19 @@ const DetailsCard = () => {
             </p>
           </div>
           <div className="right">
-            {collapse ? (
-              <>
-                <p className="logo">
-                  <img src="/assets/image4.svg" alt="admoni/logo" />
-                </p>
-                <i
-                  className="fas fa-chevron-up arrow cursor-pointer"
-                  onClick={() => setCollapse(false)}
-                ></i>
+            <p className="logo">
+              <img src="/assets/image4.svg" alt="admoni/logo" />
+            </p>
+            <i className="fas fa-chevron-up arrow"></i>
+            <h2>Admoni Investment Comp</h2>
 
-                <h2>Admoni Investment Comp</h2>
-
-                <p className="address">
-                  23, Jack Benson Avenue, <br />
-                  Lekki, Lagos
-                </p>
-                <p className="id">
-                  Business ID <span className="number">2122394</span>
-                </p>
-              </>
-            ) : (
-              <div className="d-flex ">
-                <p className="logo">
-                  <img src="/assets/image4.svg" alt="admoni/logo" />
-                </p>
-                <div>
-                  <h2>Admoni Investment Comp</h2>
-                  <p className="id">
-                    <span className="number">2122394</span>
-                  </p>
-                </div>
-
-                <i
-                  className="fas fa-chevron-down arrow cursor-pointer"
-                  onClick={() => setCollapse(true)}
-                ></i>
-              </div>
-            )}
+            <p className="address">
+              23, Jack Benson Avenue, <br />
+              Lekki, Lagos
+            </p>
+            <p className="id">
+              Business ID <span className="number">2122394</span>
+            </p>
           </div>
         </div>
       </DetailsWrapper>
@@ -201,14 +166,14 @@ const DetailsWrapper = styled.div`
   }
 
   .arrow {
+    position: absolute;
+    right: 2%;
     border: 3px solid rgba(2, 52, 57, 0.4);
     width: 50px;
     height: 50px;
     padding-top: 12px;
     font-size: 1.2rem;
     border-radius: 50%;
-    margin-left: 50px;
-    cursor: pointer;
   }
 
   .address,

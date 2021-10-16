@@ -47,14 +47,13 @@ const options: ChartOptions = {
   },
 
   responsive: true,
-  
+
   plugins: {
     legend: {
       display: false,
       position: 'bottom',
       labels: {},
     },
-
 
     title: {
       display: false,
@@ -66,7 +65,7 @@ const options: ChartOptions = {
 const AdvertLineChart = () => {
   return (
     <div>
-      <Line type data={state} options={options} />
+      <Line data={state} options={options} />
     </div>
   );
 };

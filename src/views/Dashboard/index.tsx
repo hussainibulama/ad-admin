@@ -13,13 +13,13 @@ import Business from './Business/SubBusiness/index';
 import SingleBusiness from './Business/SingleBusiness/index';
 import BusinessDashboard from './Business/DashboardBusiness';
 import DiscountPartner from './Business/DiscountPartners';
-import AllAdmin from './Overview/AdminViewComponent/AllAdmin';
-import AddAdmin from './Overview/AdminViewComponent/AddAdmin';
-import AdminProfile from './Overview/AdminViewComponent/AdminProfile';
-import EditAdmin from './Overview/AdminViewComponent/EditAdmin';
+import AllAdmin from './OverView/AdminViewComponent/AllAdmin';
+import AddAdmin from './OverView/AdminViewComponent/AddAdmin';
+import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
+import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
-import DashboardOverview from './Overview/DashboardOverview';
+import DashboardOverview from './OverView/DashboardOverview';
 import AdvertiserList from '../Business/Advertisers/AdvertiserList';
 import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 import Profile from './Users/Profile';
@@ -30,14 +30,13 @@ import AdsDetails from '../Business/Advert/AdsDetails/index';
 import AdvertView from '../Business/Advert/AdvertView/index';
 import Transactions from './Transactions/Transaction';
 import Referrals from './Referrals/Referrals';
-import App from './App/App';
+import App from './App./App';
 import AppBuild from './AppBuild/AppBuild';
 import BuildDetails from './AppBuild/BuildDetails';
 import Errors from '../Errors/index';
 import ErrorsView from '../Errors/ErrorsView/index';
 import AppReviews from '../AppReviews/index';
 
-import Notifications from "./Notifications/Notification"
 function Dashboard(props) {
   const {
     match: { path },
@@ -107,7 +106,11 @@ function Dashboard(props) {
         {/*Advert view */}
         <Route exact path="/app/business/advert" component={AdvertView} />
         <Route exact path="/app/business/advert-list" component={AdvertList} />
-        <Route exact path="/app/business/ads-details" component={AdsDetails} />
+        <Route
+          exact
+          path="/app/business/ads-details/:id"
+          component={AdsDetails}
+        />
 
         {/*Errors */}
         <Route exact path="/app/errors" component={Errors} />
@@ -136,11 +139,6 @@ function Dashboard(props) {
 
         <Route path={`${path}/app`}>
           <App />
-        </Route>
-
-
-        <Route path={`${path}/notifications`}>
-          <Notifications />
         </Route>
 
         <Route path={`${path}/footer`}>

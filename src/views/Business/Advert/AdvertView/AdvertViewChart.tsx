@@ -1,66 +1,91 @@
-import React from "react"
-import styled from "styled-components"
-import { MiniChart1 } from '../../../Dashboard/Overview/MiniCharts';
-import { MiniChart2 } from '../../../Dashboard/Overview/MiniCharts';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { MiniChart1 } from '../../../Dashboard/OverView/MiniCharts';
+import { MiniChart2 } from '../../../Dashboard/OverView/MiniCharts';
 import Clicks from '../../../../assets/icons/clicks-icon.svg';
 import Chart from '../../../../assets/icons/impression-chart.svg';
 import AdvertLineChart from './AdvertLineChart';
+import instances from '../../../../axios/authbearer';
 
 const AdvertViewChart = () => {
-    return (
-      <StyledDiv>
-        <div className="chart-cont">
+  const [avail, setAvail] = useState(false);
+  const [impression, setImpression] = useState(0);
+  const [click, setClick] = useState(0);
+  async function getClicks() {
+    try {
+      let res = await instances.get<any>(
+        '/advert/v2/admin/ads-statistics?platform=web',
+      );
+
+      let result = await res.data;
+      if (result && result.status === 'success') {
+        setClick(result.data.click);
+        setImpression(result.data.impression);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  useEffect(() => {
+    if (avail === false) {
+      getClicks();
+      setAvail(true);
+    }
+  });
+  return (
+    <StyledDiv>
+      <div className="chart-cont">
+        <div>
+          <AdvertLineChart />
+          <div className="d-flex ml-5">
+            <div className="ml-3 d-flex cont">
+              <div className="active-span"></div>
+              <div className="ml-2 active-txt">Active Ads</div>
+            </div>
+            <div className="ml-3 d-flex cont">
+              <div className="inactive-span"></div>
+              <div className="ml-2 inactive-txt">Inctive Ads</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-cont-chart">
           <div>
-            <AdvertLineChart />
-            <div className="d-flex ml-5">
-              <div className="ml-3 d-flex cont">
-                <div className="active-span"></div>
-                <div className="ml-2 active-txt">Active Ads</div>
+            <h5 className="ads-title">Ads Impression</h5>
+            <div className="min-graph">
+              <MiniChart1 />
+            </div>
+            <div className="flex-cont imp-chart">
+              <div>
+                <img className="chart" src={Chart} alt="" />
               </div>
-              <div className="ml-3 d-flex cont">
-                <div className="inactive-span"></div>
-                <div className="ml-2 inactive-txt">Inctive Ads</div>
+              <div>
+                <p className="num">{impression}</p>
+                <p className="imp">impressions</p>
               </div>
             </div>
           </div>
-
-          <div className="flex-cont-chart">
+          <div>
             <div>
-              <h5 className="ads-title">Ads Impression</h5>
+              <div className="flex-cont">
+                <div>
+                  <img className="chart" src={Clicks} alt="" />
+                </div>
+                <div>
+                  <p className="num">{click}</p>
+                  <p className="imp">clicks</p>
+                </div>
+              </div>
               <div className="min-graph">
-                <MiniChart1 />
-              </div>
-              <div className="flex-cont imp-chart">
-                <div>
-                  <img className="chart" src={Chart} alt="" />
-                </div>
-                <div>
-                  <p className="num">16455</p>
-                  <p className="imp">impressions</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <div className="flex-cont">
-                  <div>
-                    <img className="chart" src={Clicks} alt="" />
-                  </div>
-                  <div>
-                    <p className="num">16455</p>
-                    <p className="imp">clicks</p>
-                  </div>
-                </div>
-                <div className="min-graph">
-                  <MiniChart2 />
-                </div>
+                <MiniChart2 />
               </div>
             </div>
           </div>
         </div>
-      </StyledDiv>
-    );
-}
+      </div>
+    </StyledDiv>
+  );
+};
 
 const StyledDiv = styled.div`
   .chart-cont {

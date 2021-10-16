@@ -53,7 +53,7 @@ const options1: ChartOptions = {
 export const MiniChart1 = () => {
   return (
     <div>
-      <Line type data={state1} options={options1} />
+      <Line data={state1} options={options1} />
     </div>
   );
 };
@@ -109,7 +109,7 @@ const options2: ChartOptions = {
 export const MiniChart2 = () => {
   return (
     <div>
-      <Line type data={state2} options={options2} />
+      <Line data={state2} options={options2} />
     </div>
   );
 };
@@ -175,7 +175,7 @@ const options3: ChartOptions = {
 export const MiniChart3 = () => {
   return (
     <div>
-      <Line type data={state3} options={options3} />
+      <Line data={state3} options={options3} />
     </div>
   );
 };
@@ -230,7 +230,7 @@ const options4: ChartOptions = {
 export const MiniChart4 = () => {
   return (
     <div>
-      <Line type data={state4} options={options4} />
+      <Line data={state4} options={options4} />
     </div>
   );
 };

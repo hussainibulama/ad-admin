@@ -1,26 +1,60 @@
-import React from "react"
-import styled from "styled-components"
-import MtnLogo from "../../../../assets/icons/mtn-logo-nav.svg"
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import MtnLogo from '../../../../assets/icons/mtn-logo-nav.svg';
+import { useParams } from 'react-router-dom';
+import instances from '../../../../axios/authbearer';
 
 const DetailsView = () => {
-    return (
-      <StyledDiv>
-        <h5 className="ads">Ads Details</h5>
+  const [avail, setAvail] = useState(false);
+  const [id, setid] = useState(0);
+  const [channels, setchannels] = useState();
+  const [date, setdate] = useState();
+  const [location, setlocation] = useState();
+  const params = useParams<any>();
 
-        <div className="details-flex">
-          <div className="txt"> 32874894 </div>
-          <div className="txt">In-App Banner</div>
-          <div className="txt">20/03/2021</div>
-          <div className="txt">30 Days</div>
-          <div className="txt">Lekki</div>
-          <div className="txt">2394</div>
-          <div className="logo-div">
-            <img src={MtnLogo} alt="" />
-          </div>
+  async function fetchdata() {
+    if (avail === false) {
+      try {
+        let res = await instances.get<any>(
+          '/advert/v2/admin/single-ad/' + params.id + '?platform=web',
+        );
+
+        let result = await res.data;
+        if (result && result.status === 'success') {
+          setid(result.data.data.id);
+          setchannels(result.data.data.channels.channels);
+          setdate(result.data.data.start_date);
+          setlocation(result.data.data.location.state);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+  useEffect(() => {
+    if (avail === false) {
+      fetchdata();
+      setAvail(true);
+    }
+  });
+  return (
+    <StyledDiv>
+      <h5 className="ads">Ads Details</h5>
+
+      <div className="details-flex">
+        <div className="txt"> {id} </div>
+        <div className="txt">{JSON.stringify(channels)}</div>
+        <div className="txt">{date}</div>
+        <div className="txt">30 Days</div>
+        <div className="txt">{JSON.stringify(location)}</div>
+        <div className="txt">2394</div>
+        <div className="logo-div">
+          <img src={MtnLogo} alt="" />
         </div>
-      </StyledDiv>
-    );
-}
+      </div>
+    </StyledDiv>
+  );
+};
 
 const StyledDiv = styled.div`
   background: #fff;

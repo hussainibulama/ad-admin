@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
 import { FormControlLabel } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
+import { useHistory, Link } from 'react-router-dom';
 
 export interface TableField<T> {
   name: keyof T;
@@ -91,6 +92,8 @@ function Table<TField, TData = TField>({
 
     setSelected(newSelected);
   };
+  const history = useHistory();
+
   const GreenCheckbox = withStyles({
     root: {
       color: '#029244',
@@ -108,13 +111,20 @@ function Table<TField, TData = TField>({
     for (let j = startColumn; j < startColumn + numberOfColumns; j += 1) {
       const field = fields[j];
 
-      rowElements.push(<td key={j}>{builder(field, data, i, j)}</td>);
+      rowElements.push(
+        <td
+          onClick={() => history.push('/app/business/ads-details/' + data.id)}
+          key={j}
+        >
+          {builder(field, data, i, j)}
+        </td>,
+      );
     }
 
     const isSelected = selected.indexOf(data.id!) !== -1;
 
     columnElements.push(
-      <tr key={i} onClick={onClick}>
+      <tr key={i}>
         {isChecked && (
           <td>
             {/* <input

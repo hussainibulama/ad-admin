@@ -62,7 +62,7 @@ const options: ChartOptions = {
 function Charts() {
   return (
     <div>
-      <Bar type data={state} options={options} />
+      <Bar data={state} options={options} />
     </div>
   );
 }

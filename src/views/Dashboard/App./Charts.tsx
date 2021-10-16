@@ -70,7 +70,7 @@ const options: ChartOptions = {
 export const Chart1 = () => {
   return (
     <div>
-      <Bar type data={state} options={options} />
+      <Bar data={state} options={options} />
     </div>
   );
 };
@@ -110,7 +110,6 @@ export const Chart2 = () => {
   return (
     <ChartT>
       <Doughnut
-        type
         data={state1}
         width={50}
         height={50}
@@ -123,7 +122,7 @@ export const Chart2 = () => {
             title: {
               display: true,
               // text: 'Chart.js Doughnut Chart',
-              padding: { top: 180, left: 0, right: 0, bottom: 0 },
+              padding: 180,
             },
           },
         }}

@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Table from '../../../../components/Table';
 import caretDown from '../../../../assets/icons/caret-down.png';
 import SearchInput from '../../../../components/SearchInput/search-input.';
 import AdvertSortSelect from '../AdvertSortSelect';
 import { useHistory, Link } from 'react-router-dom';
+import instances from '../../../../axios/authbearer';
 
 const AdvertViewTable = () => {
-    const history = useHistory();
-     const options = [
-       { value: 'sortAdvertisers', label: 'Sort Advertisers' },
-       { value: 'duration', label: 'Duration' },
-       { value: 'activeAdviser', label: 'Active Adviser' },
-       { value: 'inactiveAdviser', label: 'Inactive Adviser' },
-       { value: 'date', label: 'Date' },
-     ];
+  const history = useHistory();
+  const options = [
+    { value: 'sortAdvertisers', label: 'Sort Advertisers' },
+    { value: 'duration', label: 'Duration' },
+    { value: 'activeAdviser', label: 'Active Adviser' },
+    { value: 'inactiveAdviser', label: 'Inactive Adviser' },
+    { value: 'date', label: 'Date' },
+  ];
   const [popoverOpen2, setPopoverOpen2] = useState(false);
+  const [datas, setDatas] = useState([]);
+  const [avail, setAvail] = useState(false);
 
   const tableHead: { name: keyof TableData; displayName: any }[] = [
     {
@@ -29,19 +32,7 @@ const AdvertViewTable = () => {
     },
     { name: 'adsId', displayName: 'Ads ID' },
 
-    {
-      name: 'category',
-      displayName: (
-        <div className="d-flex align-items-center">
-          <span className="mr-1">Category</span>
-          <img src={caretDown} alt={caretDown} />
-        </div>
-      ),
-    },
     { name: 'date', displayName: 'Date' },
-    { name: 'duration', displayName: 'Duration' },
-    { name: 'cap', displayName: 'Cap' },
-    { name: 'group', displayName: 'Group' },
 
     {
       name: 'status',
@@ -58,71 +49,37 @@ const AdvertViewTable = () => {
     id: string;
     advertiser: React.ReactNode;
     adsId: string;
-    category: React.ReactNode;
-    duration: React.ReactNode;
-    cap: string;
+
     date: React.ReactNode;
-    group: string;
+
     status: React.ReactNode;
   };
 
-  const names: TableData[] = [
-    {
-      id: '1',
-      advertiser: 'Shoprite, Lekki',
-      adsId: '32874894',
-      category: 'In-App Banner',
-      date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      group: '2394',
-      status: 'Active',
-    },
-    {
-      id: '2',
-      advertiser: 'Shoprite, Lekki',
-      adsId: '32874894',
-      category: 'In-App Banner',
-      date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      group: '2394',
-      status: 'Inactive',
-    },
-    {
-      id: '3',
-      advertiser: 'Shoprite, Lekki',
-      adsId: '32874894',
-      category: 'In-App Banner',
-      date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      group: '2394',
-      status: 'Active',
-    },
-    {
-      id: '4',
-      advertiser: 'Shoprite, Lekki',
-      adsId: '32874894',
-      category: 'In-App Banner',
-      date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      group: '2394',
-      status: 'Active',
-    },
-    {
-      id: '5',
-      advertiser: 'Shoprite, Lekki',
-      adsId: '32874894',
-      category: 'In-App Banner',
-      date: '20/03/2021',
-      duration: '30 Days',
-      cap: 'Lekki',
-      group: '2394',
-      status: 'Pending',
+  const names: TableData[] = datas;
+  async function fetchdata() {
+    if (avail === false) {
+      try {
+        let res = await instances.get<any>(
+          '/advert/v2/admin/get-all-ads?platform=web',
+        );
+
+        let result = await res.data;
+        if (result && result.status === 'success') {
+          setDatas(result.data);
+
+          console.log(datas);
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
-  ];
+  }
+  useEffect(() => {
+    if (avail === false) {
+      fetchdata();
+      setAvail(true);
+    }
+  });
   return (
     <StyledList>
       <div className="grid-cont">
@@ -199,7 +156,7 @@ const StyledList = styled.div`
     grid-template-columns: 2fr 1fr;
     align-items: center;
   }
-  .view-more { 
+  .view-more {
     text-decoration: none;
     border: 1px solid #029244;
     background: rgba(0, 168, 90, 0.05);
@@ -300,4 +257,4 @@ const StyledList = styled.div`
   }
 `;
 
-export default AdvertViewTable
+export default AdvertViewTable;

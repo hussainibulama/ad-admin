@@ -134,7 +134,7 @@ const options: ChartOptions = {
 const Charts = () => {
   return (
     <div>
-      <Line type data={state} options={options} />
+      <Line data={state} options={options} />
     </div>
   );
 };

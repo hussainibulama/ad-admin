@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import "./index.scss";
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import './index.scss';
 
-import {
-  menus1,
-  menusInner,
-  menus2,
-  Icons
-} from "../data"
+import { useHistory } from 'react-router-dom';
+import { menus1, menusInner, menus2, Icons } from '../data';
 
 function Sidebar({ showIcon }) {
+  const [showDropDown, setShowDropDown] = useState(false);
+  let history = useHistory();
 
-  const [showDropDown, setShowDropDown] = useState(false)
-
+  async function logout() {
+    localStorage.removeItem('accessToken');
+    history.push('/');
+  }
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -113,11 +113,11 @@ function Sidebar({ showIcon }) {
             </li>
           ))}
         </ul>
-        <div className="sidebar-menu-logout">
+        <div onClick={() => logout()} className="sidebar-menu-logout">
           <div className="sidebar-menu-link-img mr-4">
             <img src={Icons.Logout} alt="admoni logo" />
           </div>{' '}
-          {!showIcon && 'Logout'}
+          {!showIcon && 'Logouts'}
         </div>
       </div>
     </div>
