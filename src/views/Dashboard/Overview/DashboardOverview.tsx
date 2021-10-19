@@ -48,7 +48,7 @@ class DashboardOverview extends Component<any> {
                 <p className="title1">Users Overview</p>
                 <p className="content1">Total Overview of users </p>
                 <p className="title2">28756</p>
-                <p className="content2">Users count</p>
+                <p className="content2">User counts</p>
                 <p className="title3">12987</p>
                 <p className="content3">Active User</p>
                 <p className="title4">1456</p>
