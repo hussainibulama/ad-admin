@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /var/www/react/test/admin-frontend
-npm install
+npm install --save --save-exact 
