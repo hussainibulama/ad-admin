@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
 
-const state = {
+const state: any = {
   labels: [
     'JAN',
     'FEB',
@@ -29,7 +29,7 @@ const state = {
     },
   ],
 };
-const options: ChartOptions = {
+const options: ChartOptions<any> = {
   scales: {
     x: {
       grid: {
@@ -62,7 +62,7 @@ const options: ChartOptions = {
 function Charts() {
   return (
     <div>
-      <Bar data={state} options={options} />
+      <Bar type="bar" data={state} options={options} />
     </div>
   );
 }

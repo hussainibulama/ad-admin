@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
 import styled from 'styled-components';
-const state = {
+const state: any = {
   labels: ['Year', 'Month', 'Week', 'Day'],
   datasets: [
     {
@@ -24,7 +24,7 @@ const state = {
     },
   ],
 };
-const options: ChartOptions = {
+const options: ChartOptions<any> = {
   scales: {
     x: {
       ticks: {
@@ -70,12 +70,12 @@ const options: ChartOptions = {
 export const Chart1 = () => {
   return (
     <div>
-      <Bar data={state} options={options} />
+      <Bar type="bar" data={state} options={options} />
     </div>
   );
 };
 
-const state1 = {
+const state1: any = {
   maintainAspectRatio: true,
   labels: ['Facebook', 'Twitter', 'Medium', 'LinkedIn'],
   datasets: [
@@ -110,6 +110,7 @@ export const Chart2 = () => {
   return (
     <ChartT>
       <Doughnut
+        type="doughnut"
         data={state1}
         width={50}
         height={50}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
-const state1 = {
+const state1: any = {
   labels: ['January', 'February', 'March', 'April', 'May'],
   datasets: [
     {
@@ -16,7 +16,7 @@ const state1 = {
     },
   ],
 };
-const options1: ChartOptions = {
+const options1: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -53,12 +53,12 @@ const options1: ChartOptions = {
 export const MiniChart1 = () => {
   return (
     <div>
-      <Line data={state1} options={options1} />
+      <Line type="line" data={state1} options={options1} />
     </div>
   );
 };
 
-const state2 = {
+const state2: any = {
   labels: ['January', 'February', 'March', 'April', 'May'],
   datasets: [
     {
@@ -72,7 +72,7 @@ const state2 = {
     },
   ],
 };
-const options2: ChartOptions = {
+const options2: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -109,12 +109,12 @@ const options2: ChartOptions = {
 export const MiniChart2 = () => {
   return (
     <div>
-      <Line data={state2} options={options2} />
+      <Line type="line" data={state2} options={options2} />
     </div>
   );
 };
 
-const state3 = {
+const state3: any = {
   labels: [
     'January',
     'February',
@@ -138,7 +138,7 @@ const state3 = {
     },
   ],
 };
-const options3: ChartOptions = {
+const options3: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -175,12 +175,12 @@ const options3: ChartOptions = {
 export const MiniChart3 = () => {
   return (
     <div>
-      <Line data={state3} options={options3} />
+      <Line type="line" data={state3} options={options3} />
     </div>
   );
 };
 
-const state4 = {
+const state4: any = {
   labels: [
     'January',
     'February',
@@ -204,7 +204,7 @@ const state4 = {
     },
   ],
 };
-const options4: ChartOptions = {
+const options4: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -230,7 +230,7 @@ const options4: ChartOptions = {
 export const MiniChart4 = () => {
   return (
     <div>
-      <Line data={state4} options={options4} />
+      <Line type="line" data={state4} options={options4} />
     </div>
   );
 };

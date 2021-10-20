@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
-const state = {
+const state: any = {
   labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
   datasets: [
     {
@@ -26,7 +26,7 @@ const state = {
     },
   ],
 };
-const options: ChartOptions = {
+const options: ChartOptions<any> = {
   scales: {
     x: {
       ticks: {
@@ -72,7 +72,7 @@ const options: ChartOptions = {
 const ErrorChart = () => {
   return (
     <div>
-      <Line data={state} options={options} />
+      <Line type="line" data={state} options={options} />
     </div>
   );
 };

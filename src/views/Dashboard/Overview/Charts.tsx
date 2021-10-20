@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
-const state = {
+const state: any = {
   labels: ['', '', '', '', ''],
   datasets: [
     {
@@ -87,7 +87,7 @@ const state = {
     },
   ],
 };
-const options: ChartOptions = {
+const options: ChartOptions<any> = {
   // showXAxisLabel:false,
   scales: {
     //   title:{display: false},
@@ -134,7 +134,7 @@ const options: ChartOptions = {
 const Charts = () => {
   return (
     <div>
-      <Line data={state} options={options} />
+      <Line type="line" data={state} options={options} />
     </div>
   );
 };

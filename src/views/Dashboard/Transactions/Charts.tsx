@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
-const state = {
+const state: any = {
   labels: [
     'April 20',
     'April 21',
@@ -34,7 +34,7 @@ const state = {
     },
   ],
 };
-const options: ChartOptions = {
+const options: ChartOptions<any> = {
   scales: {
     //   title:{display: false},
     x: {
@@ -77,12 +77,12 @@ const options: ChartOptions = {
 export const MainChart = () => {
   return (
     <div>
-      <Line data={state} options={options} />
+      <Line type="line" data={state} options={options} />
     </div>
   );
 };
 
-const state1 = {
+const state1: any = {
   labels: ['January', 'February', 'March', 'April', 'May'],
   datasets: [
     {
@@ -97,7 +97,7 @@ const state1 = {
     },
   ],
 };
-const options1: ChartOptions = {
+const options1: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -134,12 +134,12 @@ const options1: ChartOptions = {
 export const MiniChart1 = () => {
   return (
     <div>
-      <Line data={state1} options={options1} />
+      <Line type="line" data={state1} options={options1} />
     </div>
   );
 };
 
-const state2 = {
+const state2: any = {
   labels: ['January', 'February', 'March', 'April', 'May'],
   datasets: [
     {
@@ -154,7 +154,7 @@ const state2 = {
     },
   ],
 };
-const options2: ChartOptions = {
+const options2: ChartOptions<any> = {
   scales: {
     x: {
       display: false,
@@ -191,7 +191,7 @@ const options2: ChartOptions = {
 export const MiniChart2 = () => {
   return (
     <div>
-      <Line data={state2} options={options2} />
+      <Line type="line" data={state2} options={options2} />
     </div>
   );
 };
