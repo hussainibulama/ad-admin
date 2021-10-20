@@ -21,7 +21,7 @@
     "prettier": "^2.3.1",
     "react": "^16.13.1",
     "react-animated-css": "^1.2.1",
-    "react-chartjs-2": ">=3.0.3 <=3.0.3",
+    "react-chartjs-2": "3.0.3",
     "react-dom": "^16.13.1",
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
@@ -37,10 +37,7 @@
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "preversion": "npm test",
-    "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags && rm -rf build/temp"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
