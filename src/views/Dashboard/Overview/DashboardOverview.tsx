@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import LineCharts from './Charts';
 import { NavLink } from 'react-router-dom';
@@ -14,203 +14,170 @@ import discount from '../../../assets/icons/blueDiscount.svg';
 import bagOrange from '../../../assets/icons/smallOrange.svg';
 import { Table1, Table2 } from './table';
 import { MiniChart1, MiniChart2, MiniChart3, MiniChart4 } from './MiniCharts';
-import Dots from './Dots';
 import { Cards } from './Card';
-import instances from '../../../axios/authbearer';
 
-class DashboardOverview extends Component<any> {
-  state = {
-    click: 0,
-    impression: 0,
-  };
-  async componentDidMount() {
-    try {
-      let res = await instances.get<any>(
-        '/advert/v2/admin/ads-statistics?platform=web',
-      );
-
-      let result = await res.data;
-      if (result && result.status === 'success') {
-        this.setState({ click: result.data.click });
-        this.setState({ impression: result.data.impression });
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  render() {
-    return (
-      <OverviewWrapper>
-        <div className="section1">
-          <div className="first-card">
-            <div className="details-section">
-              <div className="details">
-                <p className="title1">Users Overview</p>
-                <p className="content1">Total Overview of users </p>
-                <p className="title2">28756</p>
-                <p className="content2">Users count</p>
-                <p className="title3">12987</p>
-                <p className="content3">Active User</p>
-                <p className="title4">1456</p>
-                <p className="content4">Inactive User</p>
-                <p className="see-all">See all Users</p>
-              </div>
-              <div className="graph">
-                <LineCharts />
-                <div className="dot-group">
-                  <Dots legendName={'User'} legendColor={'#FF7F00'} />
-                  <Dots legendName={'Advertiser'} legendColor={'#1F78B4'} />
-                  <Dots legendName={'Active Ads'} legendColor={'#318348'} />
-                  <Dots legendName={'Inactive Ads'} legendColor={'#FD242B'} />
-                  <Dots legendName={'Downloads'} legendColor={'#00A85A'} />
-                  <Dots legendName={'Token'} legendColor={'#E1B000'} />
-                  <Dots legendName={'Referrals'} legendColor={'#33A02C'} />
-                  <Dots legendName={'Reviews'} legendColor={'#FDBF6F'} />
-                </div>
+const DashboardOverview = () => {
+  return (
+    <OverviewWrapper>
+      <div className="section1">
+        <div className="first-card">
+          <div className="details-section">
+            <div className="details">
+              <p className="title1">Users Overview</p>
+              <p className="content1">Total Overview of users </p>
+              <p className="title2">28756</p>
+              <p className="content2">Users count</p>
+              <p className="title3">12987</p>
+              <p className="content3">Active User</p>
+              <p className="title4">1456</p>
+              <p className="content4">Inactive User</p>
+              <p className="see-all">See all Users</p>
+            </div>
+            <div className="graph">
+              <LineCharts />
+            </div>
+          </div>
+          <div className="other-details">
+            <div className="sub-views">
+              <div>
+                <img src={Star} alt="" />
+              </div>{' '}
+              <div className="tags">
+                <p>16455</p>
+                <p>App Review</p>
               </div>
             </div>
-            <div className="other-details">
-              <div className="sub-views">
-                <div>
-                  <img src={Star} alt="" />
-                </div>{' '}
-                <div className="tags">
-                  <p>16455</p>
-                  <p>App Review</p>
-                </div>
+            <div className="sub-views">
+              <div>
+                <img src={curvegreen} alt="" />
+              </div>{' '}
+              <div className="tags">
+                <p>112</p>
+                <p>Total Ads</p>
               </div>
-              <div className="sub-views">
-                <div>
-                  <img src={curvegreen} alt="" />
-                </div>{' '}
-                <div className="tags">
-                  <p>112</p>
-                  <p>Total Ads</p>
-                </div>
+            </div>
+            <div className="sub-views">
+              <div>
+                <img src={curveyellow} alt="" />
+              </div>{' '}
+              <div className="tags">
+                <p>112</p>
+                <p>Total Token</p>
               </div>
-              <div className="sub-views">
-                <div>
-                  <img src={curveyellow} alt="" />
-                </div>{' '}
-                <div className="tags">
-                  <p>112</p>
-                  <p>Total Token</p>
-                </div>
-              </div>
-              <div className="sub-views">
-                <div>
-                  <img src={user} alt="" />
-                </div>{' '}
-                <div className="tags">
-                  <p>112</p>
-                  <p>Total Referrals</p>
-                </div>
+            </div>
+            <div className="sub-views">
+              <div>
+                <img src={user} alt="" />
+              </div>{' '}
+              <div className="tags">
+                <p>112</p>
+                <p>Total Referrals</p>
               </div>
             </div>
           </div>
-          <div className="second-card">
-            <div className="mini-card ">
-              <div className="mini-card-title">
-                <div>
-                  <p className="card-title">Downloads</p>
-                  <p className="total fades">Total Downloads Overview</p>
-                </div>
-                <div>
-                  <img src={download} alt="" />
-                </div>
+        </div>
+        <div className="second-card">
+          <div className="mini-card ">
+            <div className="mini-card-title">
+              <div>
+                <p className="card-title">Downloads</p>
+                <p className="total fades">Total Downloads Overview</p>
               </div>
-              <div className="times">
-                <p>
-                  <NavLink to="/" activeClassName="active">
-                    Day
-                  </NavLink>
-                </p>
-                <p>
-                  <NavLink to="/" activeClassName="active">
-                    Week
-                  </NavLink>
-                </p>
-                <p>
-                  <NavLink to="/" activeClassName="active">
-                    Month
-                  </NavLink>
-                </p>
-                <p>
-                  <NavLink to="/app/overview" activeClassName="active">
-                    Year
-                  </NavLink>
-                </p>
+              <div>
+                <img src={download} alt="" />
               </div>
-              <p className="card-title number">40587</p>
-              <p className="card-title fades">Total Downloads</p>
             </div>
-            <div className="mini-card first">
-              <div className="mini-card-title">
-                <div>
-                  <p className="card-title">Advertisers</p>
-                  <p className="total fades">Total Advertisers Overview</p>
-                </div>
-                <div>
-                  <img src={twousers} alt="" />
-                </div>
-              </div>
-
-              <p className="card-title number mt-2">40587</p>
-              <p className="downloads fades">Total Advertisers onboard</p>
-              <p className="mt-4">
-                <NavLink to="/" className="view font-weight-bold">
-                  {' '}
-                  View
+            <div className="times">
+              <p>
+                <NavLink to="/" activeClassName="active">
+                  Day
+                </NavLink>
+              </p>
+              <p>
+                <NavLink to="/" activeClassName="active">
+                  Week
+                </NavLink>
+              </p>
+              <p>
+                <NavLink to="/" activeClassName="active">
+                  Month
+                </NavLink>
+              </p>
+              <p>
+                <NavLink to="/app/overview" activeClassName="active">
+                  Year
                 </NavLink>
               </p>
             </div>
+            <p className="card-title number">40587</p>
+            <p className="card-title fades">Total Downloads</p>
           </div>
-        </div>
-
-        <div className="section2">
-          <div className="small-card">
-            <p className="ads">Ads Impressions</p>
-            <div className="mini-graphs">
-              <MiniChart1 />
-            </div>
-            <div className="sub-views float-right">
+          <div className="mini-card first">
+            <div className="mini-card-title">
               <div>
-                <img src={adsChart} alt="" />
-              </div>{' '}
-              <div className="tags">
-                <p>{this.state.impression}</p>
-                <p>Impressions</p>
+                <p className="card-title">Advertisers</p>
+                <p className="total fades">Total Advertisers Overview</p>
+              </div>
+              <div>
+                <img src={twousers} alt="" />
               </div>
             </div>
-          </div>
-          <Cards
-            number={this.state.click}
-            desc={'Clicks'}
-            image={discovery}
-            charts={MiniChart2}
-          />
-          <Cards
-            number={16455}
-            desc={'Discounted Products'}
-            image={discount}
-            charts={MiniChart3}
-          />
-          <Cards
-            number={16455}
-            desc={'Merchant'}
-            image={bagOrange}
-            charts={MiniChart4}
-          />
-        </div>
 
-        <div className="section3 ">
-          <Table1 />
-          <Table2 />
+            <p className="card-title number mt-2">40587</p>
+            <p className="downloads fades">Total Advertisers onboard</p>
+            <p className="mt-4">
+              <NavLink to="/" className="view ">
+                {' '}
+                View
+              </NavLink>
+            </p>
+          </div>
         </div>
-      </OverviewWrapper>
-    );
-  }
-}
+      </div>
+
+      <div className="section2">
+        <div className="small-card">
+          <p className="ads">Ads Impressions</p>
+          <div className="mini-graphs">
+            <MiniChart1 />
+          </div>
+          <div className="sub-views float-right">
+            <div>
+              <img src={adsChart} alt="" />
+            </div>{' '}
+            <div className="tags">
+              <p>16455</p>
+              <p>Clicks</p>
+            </div>
+          </div>
+        </div>
+        <Cards
+          number={16455}
+          desc={'Clicks'}
+          image={discovery}
+          charts={MiniChart2}
+        />
+        <Cards
+          number={16455}
+          desc={'Discounted Products'}
+          image={discount}
+          charts={MiniChart3}
+        />
+        <Cards
+          number={16455}
+          desc={'Merchant'}
+          image={bagOrange}
+          charts={MiniChart4}
+        />
+      </div>
+
+      <div className="section3 ">
+        <Table1 />
+        <Table2 />
+      </div>
+    </OverviewWrapper>
+  );
+};
 
 const OverviewWrapper = styled.div`
   font-family: Montserrat;
@@ -221,8 +188,7 @@ const OverviewWrapper = styled.div`
   .details-section,
   .other-details,
   .sub-views,
-  .section3,
-  .dot-group {
+  .section3 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -287,20 +253,10 @@ const OverviewWrapper = styled.div`
     justify-content: space-between;
     margin: 0.5rem 0;
   }
-  //Large graph
+
   .graph {
-    width: 78%;
+    width: 70%;
   }
-  .dot-group {
-    width: 100%;
-    margin-top: -0.5rem;
-  }
-
-  .dot-group p {
-    font-size: 0.65rem;
-  }
-  //end of Large graph
-
   .sub-views {
     align-items: center;
   }
@@ -401,21 +357,6 @@ const OverviewWrapper = styled.div`
     margin-top: 1rem;
     justify-content: space-between;
   }
-
-  @media screen and (max-width: 767px) {
-    .section1 {
-      flex-direction: column;
-    }
-    .first-card {
-      flex-basis: 100%;
-      margin: 1rem 0;
-    }
-
-    .section2,
-    .section3 {
-      flex-direction: column;
-      align-items: space-evenly;
-    }
-  }
 `;
+
 export default DashboardOverview;
