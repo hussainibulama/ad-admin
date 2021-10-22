@@ -19,7 +19,7 @@ import AdminProfile from './OverView/AdminViewComponent/AdminProfile';
 import EditAdmin from './OverView/AdminViewComponent/EditAdmin';
 import DiscountPartnerDetails from './Business/DiscountPartners/pages/discount-partner-detalis';
 import BusinessDetailsPage from './Business/SingleBusiness/index';
-import DashboardOverview from './OverView/DashboardOverview';
+import Dashboards from './OverView/Dashboards';
 import AdvertiserList from '../Business/Advertisers/AdvertiserList';
 import AdvertisersView from '../Business/Advertisers/AdvertisersView';
 import Profile from './Users/Profile';
@@ -49,7 +49,7 @@ function Dashboard(props) {
           <Redirect to={`${path}/overview`} />
         </Route>
         <Route path={`${path}/overview`}>
-          <DashboardOverview />
+          <Dashboards />
         </Route>
         <Route path={`${path}/dashboard`}>
           <BusinessDashboard />
@@ -65,7 +65,7 @@ function Dashboard(props) {
           <Profile />
         </Route>
 
-        <Route exact path="/app/dashboard" component={DashboardOverview} />
+        <Route exact path="/app/dashboard" component={Dashboards} />
         <Route
           exact
           path="/app/business/dashboard"
